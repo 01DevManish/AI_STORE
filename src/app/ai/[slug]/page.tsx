@@ -23,7 +23,7 @@ interface AI {
 export default function AiDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
-  const [ai, setAi] = useState<AI | null>(null);
+  const [aiData, setAiData] = useState<AI | null>(null);
 
   useEffect(() => {
     if (!slug) return;
@@ -46,12 +46,12 @@ export default function AiDetailPage() {
       <div className="max-w-4xl mx-auto bg-white shadow-lg rounded-lg overflow-hidden">
         <img src={aiData.image_url} alt={aiData.name} className="w-full h-64 object-cover" />
         <div className="p-6">
-          <h1 className="text-2xl font-bold">{ai.name}</h1>
-          <p className="text-gray-600 mt-2">{ai.description}</p>
-          <p><strong>Category:</strong> {ai.category}</p>
-          <p><strong>Platform:</strong> {ai.platform}</p>
-          <p><strong>Rating:</strong> {ai.rating}</p>
-          <p><strong>Developer:</strong> {ai.developer_name}</p>
+          <h1 className="text-2xl font-bold">{aiData.name}</h1>
+          <p className="text-gray-600 mt-2">{aiData.description}</p>
+          <p><strong>Category:</strong> {aiData.category}</p>
+          <p><strong>Platform:</strong> {aiData.platform}</p>
+          <p><strong>Rating:</strong> {aiData.rating}</p>
+          <p><strong>Developer:</strong> {aiData.developer_name}</p>
           <a href={aiData.ai_url} className="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg transition hover:bg-blue-700" target="_blank" rel="noopener noreferrer">
             Visit AI Tool
           </a>
