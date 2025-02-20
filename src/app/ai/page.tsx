@@ -1,5 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
+import { useRouter } from 'next/navigation';
 import Header from '../components/Header';
 
 interface AI {
@@ -22,6 +23,7 @@ interface AI {
 
 export default function MyApp() {
   const [data, setData] = useState<AI[]>([]);
+  const router = useRouter();
 
   useEffect(() => {
     const fetchData = async () => {
@@ -32,6 +34,11 @@ export default function MyApp() {
 
     fetchData();
   }, []);
+
+  const handleGetClick = (name: string) => {
+    const slug = name.toLowerCase().replace(/\s+/g, '-');
+    router.push(`/ai/${slug}`);
+  };
 
   return (
     <>
@@ -51,14 +58,12 @@ export default function MyApp() {
                 <p className="text-sm text-gray-300 mt-2 line-clamp-2">{ai.description}</p>
                 <div className="flex items-center justify-between mt-4">
                   <span className="text-yellow-400 text-sm font-medium">⭐ {ai.rating}</span>
-                  <a
-                    href={ai.ai_url}
+                  <button
+                    onClick={() => handleGetClick(ai.name)}
                     className="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-500"
-                    target="_blank"
-                    rel="noopener noreferrer"
                   >
                     Get
-                  </a>
+                  </button>
                 </div>
               </div>
             </div>
