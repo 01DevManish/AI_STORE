@@ -1,6 +1,6 @@
 'use client';
 import { useEffect, useState } from 'react';
-import Header from '../components/Header'
+import Header from '../components/Header';
 
 interface AI {
   id: number;
@@ -35,44 +35,36 @@ export default function MyApp() {
 
   return (
     <>
-    <Header/>
-    <div className="bg-gray-100 text-gray-900 min-h-screen">
-      <h1 className="text-center text-2xl font-bold my-6">AI Tools from MySQL</h1>
-      <div className="grid gap-6 p-6 max-w-6xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
-        {data.map((ai) => (
-          <div
-            key={ai.id}
-            className="bg-white rounded-2xl shadow-lg overflow-hidden transition-transform transform hover:scale-105"
-          >
-            <img src={ai.image_url} alt={ai.name} className="w-full h-48 object-cover" />
-            <div className="p-4">
-              <h2 className="text-lg font-semibold">{ai.name}</h2>
-              <p className="text-sm text-gray-600 mt-2">{ai.description}</p>
-              <p>
-                <strong>Category:</strong> {ai.category}
-              </p>
-              <p>
-                <strong>Platform:</strong> {ai.platform}
-              </p>
-              <p>
-                <strong>Rating:</strong> {ai.rating}
-              </p>
-              <p>
-                <strong>Developer:</strong> {ai.developer_name}
-              </p>
-              <a
-                href={ai.ai_url}
-                className="inline-block mt-4 px-4 py-2 bg-blue-500 text-white rounded-lg transition hover:bg-blue-700"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                Learn More
-              </a>
+      <Header />
+      <div className="bg-black text-white min-h-screen p-6">
+        <h1 className="text-3xl font-bold mb-6">AI Tools Store</h1>
+        <div className="grid gap-6 max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
+          {data.map((ai) => (
+            <div
+              key={ai.id}
+              className="bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all"
+            >
+              <img src={ai.image_url} alt={ai.name} className="w-full h-40 object-cover rounded-lg" />
+              <div className="mt-4">
+                <h2 className="text-lg font-semibold">{ai.name}</h2>
+                <p className="text-gray-400 text-sm mt-1">{ai.category}</p>
+                <p className="text-sm text-gray-300 mt-2 line-clamp-2">{ai.description}</p>
+                <div className="flex items-center justify-between mt-4">
+                  <span className="text-yellow-400 text-sm font-medium">⭐ {ai.rating}</span>
+                  <a
+                    href={ai.ai_url}
+                    className="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-500"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    Get
+                  </a>
+                </div>
+              </div>
             </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
-    </div>
     </>
   );
 }
