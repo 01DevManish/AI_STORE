@@ -1,6 +1,7 @@
 'use client';
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
+import Image from 'next/image';
 import Header from '../components/Header';
 
 interface AI {
@@ -51,7 +52,15 @@ export default function MyApp() {
               key={ai.id}
               className="bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all"
             >
-              <img src={ai.image_url} alt={ai.name} className="w-full h-40 object-cover rounded-lg" />
+              <div className="relative w-full h-40">
+                <Image 
+                  src={ai.image_url} 
+                  alt={ai.name} 
+                  layout="fill" 
+                  objectFit="cover" 
+                  className="rounded-lg" 
+                />
+              </div>
               <div className="mt-4">
                 <h2 className="text-lg font-semibold">{ai.name}</h2>
                 <p className="text-gray-400 text-sm mt-1">{ai.category}</p>
