@@ -54,11 +54,12 @@ export default function MyApp() {
             >
               <div className="relative w-full h-40">
                 <Image 
-                  src={ai.image_url} 
+                  src={ai.image_url || '/fallback.jpg'} // Fallback image
                   alt={ai.name} 
-                  layout="fill" 
-                  objectFit="cover" 
-                  className="rounded-lg" 
+                  width={300} 
+                  height={160} 
+                  className="w-full h-full object-cover rounded-lg" 
+                  unoptimized // Optional: removes Next.js optimization for testing
                 />
               </div>
               <div className="mt-4">
