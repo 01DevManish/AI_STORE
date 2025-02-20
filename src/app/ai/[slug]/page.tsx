@@ -34,7 +34,7 @@ export const getServerSideProps: GetServerSideProps = async (context) => {
   const { slug } = context.params!;
   
   // Fetch data from API
-  const res = await fetch(`https://api.example.com/ai/${slug}`);
+  const res = await fetch(`/getAiBySlug${slug}`);
   const ai = await res.json();
 
   if (!ai) {
