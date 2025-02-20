@@ -23,7 +23,7 @@ interface AI {
 export default function AiDetailPage() {
   const router = useRouter();
   const { slug } = router.query;
-  const [aiData, setAiData] = useState<AI | null>(null);
+  const [ai, setAi] = useState<AI | null>(null);
 
   useEffect(() => {
     if (!slug) return;
