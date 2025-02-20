@@ -1,6 +1,6 @@
 'use client'
 import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';  // Use next/navigation for navigation
+  // Use next/navigation for navigation
 import { usePathname } from 'next/navigation'; // To get the current pathname (including slug)
 import Header from '../../components/Header';
 
