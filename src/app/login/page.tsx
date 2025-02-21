@@ -4,7 +4,6 @@ import React, { useState } from "react";
 import { useRouter } from "next/navigation";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import {
-  AuthProvider,
   auth,
   GoogleAuthProvider,
   FacebookAuthProvider,
@@ -12,7 +11,7 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "./firebase"; // Adjust this import path to match your project structure
+} from "../firebase"; // Adjust import path based on project structure
 
 const AuthForm: React.FC = () => {
   const router = useRouter();
@@ -23,20 +22,20 @@ const AuthForm: React.FC = () => {
 
   const toggleForm = () => setIsLogin(!isLogin);
 
-  const handleAuth = async (provider: AuthProvider) => {
+  // Function for handling social login (Google, Facebook, GitHub)
+  const handleAuth = async (
+    provider: GoogleAuthProvider | FacebookAuthProvider | GithubAuthProvider
+  ) => {
     try {
       await signInWithPopup(auth, provider);
       alert("Login successful!");
-      router.push("/dashboard"); // Use a relative path for better routing management
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Error logging in with social provider.");
-      }
+      router.push("/dashboard"); // Redirect after login
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Authentication failed.");
     }
   };
 
+  // Function for handling email/password login & signup
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
     setError(null);
@@ -48,13 +47,9 @@ const AuthForm: React.FC = () => {
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Sign up successful!");
       }
-      router.push("/dashboard");
-    } catch (error) {
-      if (error instanceof Error) {
-        setError(error.message);
-      } else {
-        setError("Authentication error. Check your details and try again.");
-      }
+      router.push("/dashboard"); // Redirect to dashboard
+    } catch (err) {
+      setError(err instanceof Error ? err.message : "Authentication error.");
     }
   };
 
