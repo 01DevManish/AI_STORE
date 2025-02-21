@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import Link from "next/link"; // Import Link from next/link
 import './style.css'; // Ensure your CSS is imported here
 
 const Header: React.FC = () => {
@@ -109,7 +110,9 @@ const Header: React.FC = () => {
               {/* Other Menu Items */}
               <li><a className="nav-link" href="https://jobbook.learnloner.com/">JobBook</a></li>
               <li><a className="nav-link" href="./">NoteBook</a></li>
-              <li><a className="nav-link" href="/">About</a></li>
+              <li>
+                <Link className="nav-link" href="/">About</Link> {/* Use Link component for navigation */}
+              </li>
             </ul>
           </nav>
         </div>
