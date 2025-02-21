@@ -12,14 +12,14 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "./firebase";
+} from "@/lib/firebase"; // Adjust this import path to match your project structure
 
 const AuthForm: React.FC = () => {
   const router = useRouter();
   const [isLogin, setIsLogin] = useState(true);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
-  const [error, setError] = useState("");
+  const [error, setError] = useState<string | null>(null);
 
   const toggleForm = () => setIsLogin(!isLogin);
 
@@ -27,8 +27,8 @@ const AuthForm: React.FC = () => {
     try {
       await signInWithPopup(auth, provider);
       alert("Login successful!");
-      router.push("https://ai-store-eight.vercel.app/ai/dashboard"); // Redirect to dashboard
-    } catch (error: unknown) {
+      router.push("/dashboard"); // Use a relative path for better routing management
+    } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
       } else {
@@ -39,6 +39,7 @@ const AuthForm: React.FC = () => {
 
   const handleEmailAuth = async (e: React.FormEvent) => {
     e.preventDefault();
+    setError(null);
     try {
       if (isLogin) {
         await signInWithEmailAndPassword(auth, email, password);
@@ -47,8 +48,8 @@ const AuthForm: React.FC = () => {
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Sign up successful!");
       }
-      router.push("https://sanity-1bua.vercel.app/"); // Redirect to home page
-    } catch (error: unknown) {
+      router.push("/dashboard");
+    } catch (error) {
       if (error instanceof Error) {
         setError(error.message);
       } else {
@@ -74,6 +75,7 @@ const AuthForm: React.FC = () => {
                 type="text"
                 className="w-full px-4 py-2 mt-2 border rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500 bg-gray-700 text-gray-200"
                 placeholder="Enter your full name"
+                required
               />
             </div>
           )}
@@ -85,6 +87,7 @@ const AuthForm: React.FC = () => {
               placeholder="Enter your email"
               value={email}
               onChange={(e) => setEmail(e.target.value)}
+              required
             />
           </div>
           <div className="mb-4">
@@ -95,10 +98,11 @@ const AuthForm: React.FC = () => {
               placeholder="Enter your password"
               value={password}
               onChange={(e) => setPassword(e.target.value)}
+              required
             />
           </div>
 
-          <button className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
+          <button type="submit" className="w-full px-4 py-2 text-white bg-blue-600 rounded-md hover:bg-blue-700 transition">
             {isLogin ? "Login" : "Sign Up"}
           </button>
         </form>
