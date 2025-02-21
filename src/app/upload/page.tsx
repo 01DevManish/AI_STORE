@@ -17,7 +17,6 @@ export default function UploadAI() {
     ai_url: '',
   });
 
-  // Handle form data change
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLSelectElement | HTMLTextAreaElement>) => {
     const { name, value } = e.target;
     setFormData((prevData) => ({
@@ -26,11 +25,9 @@ export default function UploadAI() {
     }));
   };
 
-  // Handle form submission
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
 
-    // Prepare the form data to send to the backend
     const response = await fetch('/api/uploadAI', {
       method: 'POST',
       headers: {
@@ -48,10 +45,10 @@ export default function UploadAI() {
   };
 
   return (
-    <div style={{  maxWidth: '800px', margin: '50px', padding: '20px', backgroundColor: '#f9f9f9', borderRadius: '8px', boxShadow: '0 4px 8px rgba(0, 0, 0, 0.1)' }}>
-      <h1 style={{ textAlign: 'center', color: '#333' }}>Upload AI Tool</h1>
-      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '15px' }}>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+    <div style={{ maxWidth: '800px', margin: '50px auto', padding: '30px', backgroundColor: '#121212', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.3)', color: '#E0E0E0' }}>
+      <h1 style={{ textAlign: 'center', color: '#fff', fontSize: '24px', marginBottom: '30px' }}>Upload AI Tool</h1>
+      <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '20px' }}>
+        <label style={{ fontSize: '16px' }}>
           Name:
           <input
             type="text"
@@ -60,30 +57,32 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s, background-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Category:
           <select
             name="category"
             value={formData.category}
             onChange={handleChange}
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           >
             <option value="videoai">Video AI</option>
@@ -92,7 +91,7 @@ export default function UploadAI() {
             <option value="imageai">Image AI</option>
           </select>
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Description:
           <textarea
             name="description"
@@ -100,31 +99,33 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
-              outline: 'none',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               resize: 'vertical',
-              transition: 'border 0.3s',
+              outline: 'none',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           File Type:
           <select
             name="file_type"
             value={formData.file_type}
             onChange={handleChange}
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           >
             <option value="Android">Android</option>
@@ -133,7 +134,7 @@ export default function UploadAI() {
             <option value="Web">Web</option>
           </select>
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           File Size (in bytes):
           <input
             type="number"
@@ -142,17 +143,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Developer Name:
           <input
             type="text"
@@ -161,17 +163,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Version:
           <input
             type="text"
@@ -180,17 +183,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Platform:
           <input
             type="text"
@@ -199,17 +203,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Rating:
           <input
             type="number"
@@ -221,17 +226,18 @@ export default function UploadAI() {
             step="0.1"
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Download Count:
           <input
             type="number"
@@ -240,17 +246,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           Image URL:
           <input
             type="url"
@@ -259,17 +266,18 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
-        <label style={{ fontSize: '14px', color: '#555' }}>
+        <label style={{ fontSize: '16px' }}>
           AI URL:
           <input
             type="url"
@@ -278,40 +286,40 @@ export default function UploadAI() {
             onChange={handleChange}
             required
             style={{
-              padding: '10px',
+              padding: '12px',
               fontSize: '14px',
-              borderRadius: '5px',
-              border: '1px solid #ccc',
-              marginTop: '5px',
+              borderRadius: '8px',
+              border: '1px solid #333',
+              backgroundColor: '#212121',
+              color: '#fff',
               outline: 'none',
-              transition: 'border 0.3s',
+              transition: 'border-color 0.3s',
             }}
           />
         </label>
         <button
-  type="submit"
-  style={{
-    backgroundColor: '#4CAF50',
-    color: 'white',
-    padding: '12px',
-    border: 'none',
-    borderRadius: '5px',
-    cursor: 'pointer',
-    fontSize: '16px',
-    transition: 'background-color 0.3s',
-  }}
-  onMouseEnter={(e) => {
-    const target = e.target as HTMLButtonElement;
-    target.style.backgroundColor = '#45a009';
-  }}
-  onMouseLeave={(e) => {
-    const target = e.target as HTMLButtonElement;
-    target.style.backgroundColor = '#4CAF50';
-  }}
->
-  Upload AI
-</button>
-
+          type="submit"
+          style={{
+            backgroundColor: '#1E88E5',
+            color: '#fff',
+            padding: '14px',
+            border: 'none',
+            borderRadius: '8px',
+            cursor: 'pointer',
+            fontSize: '16px',
+            transition: 'background-color 0.3s',
+          }}
+          onMouseEnter={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.backgroundColor = '#1565C0';
+          }}
+          onMouseLeave={(e) => {
+            const target = e.target as HTMLButtonElement;
+            target.style.backgroundColor = '#1E88E5';
+          }}
+        >
+          Upload AI
+        </button>
       </form>
     </div>
   );
