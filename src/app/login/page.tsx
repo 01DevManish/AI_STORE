@@ -47,7 +47,7 @@ const AuthForm: React.FC = () => {
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Sign up successful!");
       }
-      router.push("/dashboard"); // Redirect to dashboard
+      router.push("/ai/dashboard"); // Redirect to dashboard
     } catch (err) {
       setError(err instanceof Error ? err.message : "Authentication error.");
     }
