@@ -8,12 +8,12 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
   const { category } = req.query;
 
   let query = 'SELECT * FROM AIs'; // Default query to fetch all data
-  const queryParams: any[] = [];
+  const queryParams: string[] = []; // Specify the type as string[]
 
   // If category is provided, add a WHERE clause to the query
   if (category) {
     query += ' WHERE category = ?';
-    queryParams.push(category);
+    queryParams.push(category as string); // Ensure category is treated as a string
   }
 
   pool.query(query, queryParams, (err, results) => {
