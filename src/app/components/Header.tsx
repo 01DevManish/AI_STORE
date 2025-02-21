@@ -1,213 +1,131 @@
-'use client'
-import React, { useState } from "react";
-
-import Link from 'next/link';
-import { FaRobot, FaChartLine, FaGlobe, FaStore, FaDollarSign, FaUser } from 'react-icons/fa'; // Corrected import
+import React, { useState, useEffect, useRef } from "react";
+import './style.css'; // Ensure your CSS is imported here
 
 const Header: React.FC = () => {
-  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [openDropdown, setOpenDropdown] = useState<string | null>(null);
-  const [userName] = useState<string | null>(null);
+  const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
+  const [isNavOpen, setIsNavOpen] = useState(false);
+  const navRef = useRef<HTMLDivElement>(null);
 
-  const handleMouseEnter = (menu: string) => {
-    setOpenDropdown(menu);
+  // Toggle dropdown menu
+  const handleDropdownToggle = (dropdownId: string) => {
+    setActiveDropdown(activeDropdown === dropdownId ? null : dropdownId);
   };
 
-  const handleMouseLeave = () => {
-    setOpenDropdown(null);
-  };
+  // Close dropdowns when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (navRef.current && !navRef.current.contains(event.target as Node)) {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("click", handleClickOutside);
+    return () => document.removeEventListener("click", handleClickOutside);
+  }, []);
+
+  // Close dropdowns on Escape key
+  useEffect(() => {
+    const handleKeyDown = (event: KeyboardEvent) => {
+      if (event.key === "Escape") {
+        setActiveDropdown(null);
+      }
+    };
+
+    document.addEventListener("keydown", handleKeyDown);
+    return () => document.removeEventListener("keydown", handleKeyDown);
+  }, []);
 
   return (
-    <nav className="bg-[#0d1117] shadow-md  w-full z-10">
-      <div className="max-w-7xl mx-auto px-4 flex justify-between items-center h-16">
-        {/* Logo section */}
-        <div className="flex items-center space-x-2">
-          <Link href="/">
-             <span className="text-2xl font-bold">
-            <span className="text-white">Store</span>
-            <span className="text-indigo-400">.ai</span>
-          </span>
-          </Link>
-         
+    <header id="nav-menu" aria-label="navigation bar">
+      <div className="container">
+        <div className="nav-start">
+          <img src="https://learnloner.com/logo.svg" alt="Learn Loner Logo" className="logo-img" />
+
+          <nav className={`menu ${isNavOpen ? "show" : ""}`} ref={navRef}>
+            <ul className="menu-bar">
+              {/* Dropdown - Browse */}
+              <li>
+                <button
+                  className="nav-link dropdown-btn"
+                  onClick={() => handleDropdownToggle("dropdown1")}
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === "dropdown1"}
+                >
+                  Browse <i className="bx bx-chevron-down"></i>
+                </button>
+                {activeDropdown === "dropdown1" && (
+                  <div id="dropdown1" className="dropdown active">
+                    <ul role="menu">
+                      <li role="menuitem">
+                        <a className="dropdown-link" href="https://learnloner.com/cse-previous-year-question-papers/">
+                          <img src="https://learnloner.com/wp-content/uploads/2025/01/checklist.png" className="icon" />
+                          <div>
+                            <span className="dropdown-link-title">Previous Year Question Paper</span>
+                            <p>KUK & AKTU Previous Year Question Paper</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a className="dropdown-link" href="https://learnloner.com/computer-science-syllabus/">
+                          <img src="https://learnloner.com/wp-content/uploads/2025/01/notebook.png" className="icon" />
+                          <div>
+                            <span className="dropdown-link-title">Syllabus</span>
+                            <p>KUK & AKTU Syllabus</p>
+                          </div>
+                        </a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+
+              {/* Dropdown - Discover */}
+              <li>
+                <button
+                  className="nav-link dropdown-btn"
+                  onClick={() => handleDropdownToggle("dropdown2")}
+                  aria-haspopup="true"
+                  aria-expanded={activeDropdown === "dropdown2"}
+                >
+                  Discover <i className="bx bx-chevron-down"></i>
+                </button>
+                {activeDropdown === "dropdown2" && (
+                  <div id="dropdown2" className="dropdown active">
+                    <ul role="menu">
+                      <li>
+                        <span className="dropdown-link-title">Browse Courses</span>
+                      </li>
+                      <li role="menuitem">
+                        <a className="dropdown-link" href="#branding">C++ Programming</a>
+                      </li>
+                      <li role="menuitem">
+                        <a className="dropdown-link" href="#illustrations">Python Programming</a>
+                      </li>
+                    </ul>
+                  </div>
+                )}
+              </li>
+
+              {/* Other Menu Items */}
+              <li><a className="nav-link" href="https://jobbook.learnloner.com/">JobBook</a></li>
+              <li><a className="nav-link" href="./">NoteBook</a></li>
+              <li><a className="nav-link" href="/">About</a></li>
+            </ul>
+          </nav>
         </div>
 
-        {/* Centered Menu Items */}
-        <div className="hidden md:flex items-center space-x-8 mx-auto">
-          {/* Products Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('products')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className="text-gray-300 hover:text-indigo-400 font-medium">
-              Products
-            </button>
-            {openDropdown === 'products' && (
-              <div className="absolute bg-[#161b22] border border-gray-700 rounded-md shadow-lg mt-2 w-[250px] rounded-[15px] hover:rounded-[15px]">
-                <Link href="/New-AIs" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaRobot className="inline mr-2" /> New AIs
-                </Link>
-                <Link href="/Most-Used-AIs" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaChartLine className="inline mr-2" /> Most Used AIs
-                </Link>
-                <Link href="/Most-Saved-AIs" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaGlobe className="inline mr-2" /> Most Saved AIs
-                </Link>
-                <Link href="/AI-Chrome-Extension" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaStore className="inline mr-2" /> AI Chrome Extension
-                </Link>
-                <Link href="/AI-Apps" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaDollarSign className="inline mr-2" /> AI Apps
-                </Link>
-              </div>
-            )}
-          </div>
+        {/* Hamburger Button */}
+        <button
+  id="hamburger"
+  aria-label="hamburger"
+  onClick={() => setIsNavOpen(!isNavOpen)}
+  aria-expanded={isNavOpen}
+>
+  <i className={`bx ${isNavOpen ? "bx-x" : "bx-menu"}`}></i>
+</button>
 
-          {/* Solutions Dropdown */}
-          <div
-            className="relative"
-            onMouseEnter={() => handleMouseEnter('solutions')}
-            onMouseLeave={handleMouseLeave}
-          >
-            <button className="text-gray-300 hover:text-indigo-400 font-medium">
-              Ranking
-            </button>
-            {openDropdown === 'solutions' && (
-              <div className="absolute bg-[#161b22] border border-gray-700 rounded-md shadow-lg mt-2 w-[250px] rounded-[15px] hover:rounded-[15px]">
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaChartLine className="inline mr-2" /> Top AI By Monthly
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaGlobe className="inline mr-2" /> Top AI By Category
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaStore className="inline mr-2" /> Top AI By Regions
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaDollarSign className="inline mr-2" /> Top AI By Sources
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2 rounded-[15px] hover:rounded-[15px]">
-                  <FaRobot className="inline mr-2" /> Top AI By Revenue
-                </Link>
-              </div>
-            )}
-          </div>
-
-          <Link href="/about" className="text-gray-300 hover:text-indigo-400 font-medium">About</Link>
-          <Link href="#" className="text-gray-300 hover:text-indigo-400 font-medium">Resources</Link>
-        </div>
-
-        {/* Right Aligned Login/Profile Section */}
-        <div className="hidden md:block">
-          {userName ? (
-            <div className="flex flex-col items-center">
-              <FaUser className="text-gray-300 hover:text-indigo-400" />
-              <span className="text-gray-300">{userName}</span>
-            </div>
-          ) : (
-            <Link href="/login" className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300">Login</Link>
-          )}
-        </div>
-
-        {/* Mobile menu button */}
-        <button 
-          onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-          className="md:hidden inline-flex items-center justify-center p-2 rounded-md text-gray-300 hover:text-indigo-400 focus:outline-none"
-        >
-          {isMobileMenuOpen ? (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M6 18L18 6M6 6l12 12"
-              />
-            </svg>
-          ) : (
-            <svg
-              className="h-6 w-6"
-              fill="none"
-              stroke="currentColor"
-              viewBox="0 0 24 24"
-              xmlns="http://www.w3.org/2000/svg"
-            >
-              <path
-                strokeLinecap="round"
-                strokeLinejoin="round"
-                strokeWidth={2}
-                d="M4 6h16M4 12h16M4 18h16"
-              />
-            </svg>
-          )}
-        </button>
       </div>
-
-      {/* Mobile Menu */}
-      {isMobileMenuOpen && (
-        <div className="md:hidden bg-[#0d1117] space-y-1 p-4">
-          {/* Products Dropdown */}
-          <div className="relative">
-            <button 
-              className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md"
-              onClick={() => handleMouseEnter('products')}
-            >
-              Products
-            </button>
-            {openDropdown === 'products' && (
-              <div className="bg-[#161b22] border border-gray-700 rounded-md shadow-lg mt-2 w-[250px] rounded-[15px]">
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2">
-                  <FaRobot className="inline mr-2" /> Product 1
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2">
-                  <FaChartLine className="inline mr-2" /> Product 2
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2">
-                  <FaGlobe className="inline mr-2" /> Product 3
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* Solutions Dropdown */}
-          <div className="relative">
-            <button 
-              className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md"
-              onClick={() => handleMouseEnter('solutions')}
-            >
-              Solutions
-            </button>
-            {openDropdown === 'solutions' && (
-              <div className="bg-[#161b22] border border-gray-700 rounded-md shadow-lg mt-2 w-[250px] rounded-[15px]">
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2">
-                  <FaStore className="inline mr-2" /> Solution 1
-                </Link>
-                <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-4 py-2">
-                  <FaDollarSign className="inline mr-2" /> Solution 2
-                </Link>
-              </div>
-            )}
-          </div>
-
-          {/* New Mobile-Only Menu Item */}
-         
-
-          <Link href="/about" className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md">About</Link>
-          <Link href="#" className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md">Resources</Link>
-          
-          <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-2 px-4 rounded-lg transition duration-300"><Link href="/login" className="block text-gray-300 hover:bg-gray-700 px-3 py-2 rounded-md">Login</Link></button>
-          <button className="bg-indigo-500 hover:bg-indigo-600 text-white font-bold py-3 px-5 rounded-lg transition duration-300"><Link href="/login" className="block text-gray-300 hover:bg-gray-700 px-4 py-3 rounded-md">Publish</Link></button>
-         
-
-        </div>
-        
-      )}
-    </nav>
+    </header>
   );
 };
 
