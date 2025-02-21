@@ -13,6 +13,7 @@
     "@material-tailwind/react": "^2.1.10",
     "boxicons": "^2.1.4",
     "chart.js": "^4.4.8",
+    "firebase": "^11.3.1",
     "mysql2": "^3.12.0",
     "next": "^15.1.7",
     "react": "^19.0.0",
