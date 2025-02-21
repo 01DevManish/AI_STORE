@@ -29,7 +29,7 @@ const AuthForm: React.FC = () => {
     try {
       await signInWithPopup(auth, provider);
       alert("Login successful!");
-      router.push("/dashboard"); // Redirect after login
+      router.push("/ai/dashboard"); // Redirect after login
     } catch (err) {
       setError(err instanceof Error ? err.message : "Authentication failed.");
     }
