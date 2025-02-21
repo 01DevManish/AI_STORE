@@ -4,7 +4,19 @@ import pool from '../../lib/db';
 export default function handler(req: NextApiRequest, res: NextApiResponse) {
   console.log("API request received at /api/getData");
 
-  pool.query('SELECT * FROM AIs', (err, results) => {
+  // Extract category from query parameters
+  const { category } = req.query;
+
+  let query = 'SELECT * FROM AIs'; // Default query to fetch all data
+  const queryParams: any[] = [];
+
+  // If category is provided, add a WHERE clause to the query
+  if (category) {
+    query += ' WHERE category = ?';
+    queryParams.push(category);
+  }
+
+  pool.query(query, queryParams, (err, results) => {
     if (err) {
       console.error("Database Query Error:", err);
       res.status(500).json({
@@ -15,6 +27,6 @@ export default function handler(req: NextApiRequest, res: NextApiResponse) {
     }
 
     console.log("Fetched Data:", results);
-    res.status(200).json(results);
+    res.status(200).json(results); // Send the filtered data back
   });
 }
