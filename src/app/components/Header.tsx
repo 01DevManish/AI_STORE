@@ -90,10 +90,10 @@ const Header: React.FC = () => {
               </li>
 
               {/* Other Menu Items */}
-              <li><a className="nav-link" href="./categories"> Categories</a></li>
-              <li><a className="nav-link" href="https://ai.learnloner.com/"> AI Models</a></li>
+              <li><Link className="nav-link" href="/categories"> Categories</Link></li> {/* Use Link component for Categories */}
+              <li><Link className="nav-link" href="https://ai.learnloner.com/"> AI Models</Link></li>
               <li>
-                <Link className="nav-link" href="/">About</Link> {/* Use Link component for navigation */}
+                <Link className="nav-link" href="/">About</Link>
               </li>
             </ul>
           </nav>
@@ -109,9 +109,9 @@ const Header: React.FC = () => {
             />
             <div className="dropdown-menu">
               <ul>
-                <li><a href="/ai/dashboard">Dashboard</a></li>
-                <li><a href="/profile">Profile</a></li>
-                <li><a href="/logout">Logout</a></li>
+                <li><Link href="/ai/dashboard">Dashboard</Link></li> {/* Use Link component for Dashboard */}
+                <li><Link href="/profile">Profile</Link></li> {/* Use Link component for Profile */}
+                <li><Link href="/logout">Logout</Link></li> {/* Use Link component for Logout */}
               </ul>
             </div>
           </div>
