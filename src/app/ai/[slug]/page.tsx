@@ -1,7 +1,7 @@
-'use client'
+'use client';
+
 import { useEffect, useState } from 'react';
-  // Use next/navigation for navigation
-import { usePathname } from 'next/navigation'; // To get the current pathname (including slug)
+import { usePathname } from 'next/navigation';
 import Header from '../../components/Header';
 
 interface AI {
@@ -25,7 +25,7 @@ interface AI {
 export default function AIDetail() {
   const [aiData, setAiData] = useState<AI | null>(null);
   const pathname = usePathname();
-  const slug = pathname?.split('/').pop();  // Extract slug from the pathname
+  const slug = pathname?.split('/').pop();
 
   useEffect(() => {
     if (slug) {
@@ -39,36 +39,65 @@ export default function AIDetail() {
     }
   }, [slug]);
 
-  if (!aiData) return <div>Loading...</div>;
+  if (!aiData) return <div className="text-white text-center p-6">Loading...</div>;
 
   return (
     <>
       <Header />
-      <div className="bg-black text-white min-h-screen p-6">
-        <h1 className="text-3xl font-bold mb-6">{aiData.name}</h1>
-        <div className="flex gap-6">
-          <div className="w-1/3">
+      <div className="bg-black text-white w-full h-screen flex justify-center items-center p-6">
+        <div className="w-full max-w-5xl bg-gray-900 p-8 rounded-lg shadow-xl">
+          {/* Image & Name */}
+          <div className="flex items-center gap-6">
             <img
               src={aiData.image_url || '/fallback.jpg'}
               alt={aiData.name}
-              className="w-full h-80 object-cover rounded-lg"
+              className="w-[120px] h-[120px] object-cover rounded-lg shadow-md"
             />
-          </div>
-          <div className="flex-1">
-            <p className="text-lg text-gray-300">{aiData.description}</p>
-            <div className="mt-4">
-              <p><strong>Category:</strong> {aiData.category}</p>
-              <p><strong>Rating:</strong> {aiData.rating}</p>
-              <p><strong>File Type:</strong> {aiData.file_type}</p>
-              <p><strong>Platform:</strong> {aiData.platform}</p>
-              <p><strong>Developer:</strong> {aiData.developer_name}</p>
+            <div>
+              <h1 className="text-3xl font-bold">{aiData.name}</h1>
+              <p className="text-blue-400 text-lg">{aiData.developer_name}</p>
             </div>
+          </div>
+
+          {/* Rating & Category */}
+          <div className="mt-4 flex items-center gap-6 text-gray-400 text-sm">
+            <p className="flex items-center gap-1">
+              ⭐ <span className="text-lg">{aiData.rating}</span> ({aiData.download_count} downloads)
+            </p>
+            <p className="bg-gray-700 px-3 py-1 rounded-lg text-white text-sm">{aiData.category}</p>
+          </div>
+
+          {/* Description */}
+          <p className="text-gray-300 mt-6 text-lg leading-relaxed">{aiData.description}</p>
+
+          {/* Buttons */}
+          <div className="mt-6 flex gap-6">
             <a
               href={aiData.ai_url}
-              className="mt-4 inline-block px-4 py-2 bg-blue-600 text-white rounded-lg hover:bg-blue-500"
+              className="bg-blue-600 px-6 py-3 rounded-lg text-white text-lg font-semibold hover:bg-blue-500 transition"
             >
-              Try it Now
+              Try it
             </a>
+            <button className="bg-gray-700 px-6 py-3 rounded-lg text-white text-lg font-semibold hover:bg-gray-600 transition">
+              View in Store
+            </button>
+          </div>
+
+          {/* Additional Information */}
+          <div className="mt-10 p-6 bg-gray-800 rounded-lg">
+            <h2 className="text-2xl font-semibold mb-4">Additional Information</h2>
+            <div className="grid grid-cols-2 gap-4 text-gray-400 text-lg">
+              <p><strong>Developed by:</strong> {aiData.developer_name}</p>
+              <p><strong>Category:</strong> {aiData.category}</p>
+              <p><strong>File Size:</strong> {aiData.file_size} MB</p>
+              <p><strong>Version:</strong> {aiData.version}</p>
+              <p><strong>Platform:</strong> {aiData.platform}</p>
+              <p><strong>Release Date:</strong> {aiData.upload_date}</p>
+              <p><strong>Installation:</strong> Can install on multiple devices</p>
+              <p><strong>Publisher Info:</strong> <a href="#" className="text-blue-400">Support</a></p>
+              <p><strong>Seizure Warning:</strong> <a href="#" className="text-red-400">Photosensitive warning</a></p>
+              <p><strong>Report:</strong> <a href="#" className="text-blue-400">Report this product</a></p>
+            </div>
           </div>
         </div>
       </div>
