@@ -61,8 +61,17 @@ const Header: React.FC = () => {
                         <a className="dropdown-link" href="https://learnloner.com/cse-previous-year-question-papers/">
                           <img src="https://learnloner.com/wp-content/uploads/2025/01/checklist.png" className="icon" />
                           <div>
-                            <span className="dropdown-link-title">Previous Year Question Paper</span>
-                            <p>KUK & AKTU Previous Year Question Paper</p>
+                            <span className="dropdown-link-title">Most Used AI</span>
+                            <p>Most Used AI in Month</p>
+                          </div>
+                        </a>
+                      </li>
+                      <li role="menuitem">
+                        <a className="dropdown-link" href="https://learnloner.com/cse-previous-year-question-papers/">
+                          <img src="https://learnloner.com/wp-content/uploads/2025/01/checklist.png" className="icon" />
+                          <div>
+                            <span className="dropdown-link-title">Most Most Saved AI</span>
+                            <p>Most Saved AI in Month</p>
                           </div>
                         </a>
                       </li>
@@ -80,36 +89,9 @@ const Header: React.FC = () => {
                 )}
               </li>
 
-              {/* Dropdown - Discover */}
-              <li>
-                <button
-                  className="nav-link dropdown-btn"
-                  onClick={() => handleDropdownToggle("dropdown2")}
-                  aria-haspopup="true"
-                  aria-expanded={activeDropdown === "dropdown2"}
-                >
-                  Discover <i className="bx bx-chevron-down"></i>
-                </button>
-                {activeDropdown === "dropdown2" && (
-                  <div id="dropdown2" className="dropdown active">
-                    <ul role="menu">
-                      <li>
-                        <span className="dropdown-link-title">Browse Courses</span>
-                      </li>
-                      <li role="menuitem">
-                        <a className="dropdown-link" href="#branding">C++ Programming</a>
-                      </li>
-                      <li role="menuitem">
-                        <a className="dropdown-link" href="#illustrations">Python Programming</a>
-                      </li>
-                    </ul>
-                  </div>
-                )}
-              </li>
-
               {/* Other Menu Items */}
-              <li><a className="nav-link" href="https://jobbook.learnloner.com/">JobBook</a></li>
-              <li><a className="nav-link" href="./">NoteBook</a></li>
+              <li><a className="nav-link" href="./categories"> Categories</a></li>
+              <li><a className="nav-link" href="https://ai.learnloner.com/"> AI Models</a></li>
               <li>
                 <Link className="nav-link" href="/">About</Link> {/* Use Link component for navigation */}
               </li>
@@ -117,16 +99,33 @@ const Header: React.FC = () => {
           </nav>
         </div>
 
+        {/* Profile Icon on the Right with Dropdown */}
+        <div className="profile-container">
+          <div className="profile-icon">
+            <img 
+              src="https://img.freepik.com/free-vector/blue-circle-with-white-user_78370-4707.jpg" 
+              alt="Profile" 
+              className="profile-img"
+            />
+            <div className="dropdown-menu">
+              <ul>
+                <li><a href="/ai/dashboard">Dashboard</a></li>
+                <li><a href="/profile">Profile</a></li>
+                <li><a href="/logout">Logout</a></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
         {/* Hamburger Button */}
         <button
-  id="hamburger"
-  aria-label="hamburger"
-  onClick={() => setIsNavOpen(!isNavOpen)}
-  aria-expanded={isNavOpen}
->
-  <i className={`bx ${isNavOpen ? "bx-x" : "bx-menu"}`}></i>
-</button>
-
+          id="hamburger"
+          aria-label="hamburger"
+          onClick={() => setIsNavOpen(!isNavOpen)}
+          aria-expanded={isNavOpen}
+        >
+          <i className={`bx ${isNavOpen ? "bx-x" : "bx-menu"}`}></i>
+        </button>
       </div>
     </header>
   );
