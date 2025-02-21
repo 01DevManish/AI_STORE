@@ -12,7 +12,7 @@ import {
   signInWithPopup,
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
-} from "@/lib/firebase"; // Adjust this import path to match your project structure
+} from "./firebase"; // Adjust this import path to match your project structure
 
 const AuthForm: React.FC = () => {
   const router = useRouter();
