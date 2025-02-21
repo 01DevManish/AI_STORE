@@ -1,9 +1,10 @@
-'use client';
+"use client";
 
 import React, { useState } from "react";
-import { useRouter } from 'next/navigation';
+import { useRouter } from "next/navigation";
 import { FaGoogle, FaFacebook, FaGithub } from "react-icons/fa";
 import {
+  AuthProvider,
   auth,
   GoogleAuthProvider,
   FacebookAuthProvider,
@@ -22,13 +23,17 @@ const AuthForm: React.FC = () => {
 
   const toggleForm = () => setIsLogin(!isLogin);
 
-  const handleAuth = async (provider: any) => {
+  const handleAuth = async (provider: AuthProvider) => {
     try {
       await signInWithPopup(auth, provider);
       alert("Login successful!");
-      router.push("https://ai-store-eight.vercel.app/ai/dashboard"); // Redirect to home page after successful login
-    } catch (error) {
-      setError("Error logging in with social provider.");
+      router.push("https://ai-store-eight.vercel.app/ai/dashboard"); // Redirect to dashboard
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Error logging in with social provider.");
+      }
     }
   };
 
@@ -42,9 +47,13 @@ const AuthForm: React.FC = () => {
         await createUserWithEmailAndPassword(auth, email, password);
         alert("Sign up successful!");
       }
-      router.push("https://sanity-1bua.vercel.app/"); // Redirect to home page after successful login or signup
-    } catch (error) {
-      setError("Authentication error. Check your details and try again.");
+      router.push("https://sanity-1bua.vercel.app/"); // Redirect to home page
+    } catch (error: unknown) {
+      if (error instanceof Error) {
+        setError(error.message);
+      } else {
+        setError("Authentication error. Check your details and try again.");
+      }
     }
   };
 
