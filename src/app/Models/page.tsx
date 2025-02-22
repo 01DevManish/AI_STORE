@@ -1,20 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
 
-// Define the expected raw JSON structure
-interface RawModel {
-  "Models": string;
-  "w-full src"?: string;
-  "Source": string;
-  "Link": string;
-  "Total Run": string;
-  "Source 3"?: string;
-  "Growth "?: string;
-  "Growth  Rate": string;
-  "Updated Date": string;
-}
-
-// Define the formatted AI model type
 interface AIModel {
   id: number;
   name: string;
@@ -42,7 +28,7 @@ const ModelsPage: React.FC = () => {
         }
 
         // Map and normalize data
-        const formattedModels: AIModel[] = data.Models.map((model: RawModel, index: number) => ({
+        const formattedModels: AIModel[] = data.Models.map((model : { [key: string]: string } , index : number) => ({
           id: index + 1,
           name: model["Models"] || "Unknown Model",
           image: model["w-full src"] || "https://via.placeholder.com/50",
