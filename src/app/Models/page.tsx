@@ -51,7 +51,6 @@ const ModelsPage: React.FC = () => {
   }, []);
 
   return (
-    <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"} min-h-screen p-6`}>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">AI Models</h1>
         <button
