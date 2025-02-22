@@ -1,4 +1,4 @@
-"use client"; // Ensure it's a client component
+"use client";
 import { useEffect, useState } from "react";
 
 interface AIModel {
@@ -13,9 +13,8 @@ interface AIModel {
   updatedTime: string;
 }
 
-export default function ModelsPage() {  // ✅ Functional component as default export
+export default function ModelsPage() {
   const [models, setModels] = useState<AIModel[]>([]);
-  const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const fetchModels = async () => {
@@ -33,7 +32,7 @@ export default function ModelsPage() {  // ✅ Functional component as default e
           name: model["Models"] || "Unknown Model",
           image: model["w-full src"] || "https://via.placeholder.com/50",
           source: model["Source"] || "Unknown Source",
-          link: model["Link"] || "#",
+          link: model["Link"]?.replace(/^https?:\/\//, "") || "#",
           totalRuns: model["Total Run"] || "N/A",
           growth: model["Source 3"] || model["Growth "] || "N/A",
           growthRate: model["Growth  Rate"] || "N/A",
@@ -51,21 +50,13 @@ export default function ModelsPage() {  // ✅ Functional component as default e
   }, []);
 
   return (
-    <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"} min-h-screen p-6`}>
-      <div className="flex justify-between items-center mb-6">
-        <h1 className="text-3xl font-bold">AI Models</h1>
-        <button
-          onClick={() => setDarkMode(!darkMode)}
-          className="px-4 py-2 bg-blue-500 text-white rounded-lg shadow-md hover:bg-blue-600"
-        >
-          {darkMode ? "Light Mode" : "Dark Mode"}
-        </button>
-      </div>
+    <div className="bg-gray-900 text-white min-h-screen p-6">
+      <h1 className="text-3xl font-bold mb-6">AI Models</h1>
 
       <div className="overflow-x-auto">
-        <table className={`${darkMode ? "bg-gray-800 text-white" : "bg-white"} min-w-full border rounded-lg shadow-md`}>
+        <table className="bg-gray-800 text-white min-w-full border rounded-lg shadow-md">
           <thead>
-            <tr className={`${darkMode ? "bg-gray-700" : "bg-gray-200"} border-b`}>
+            <tr className="bg-gray-700 border-b">
               <th className="p-3 text-left">Model</th>
               <th className="p-3 text-left">Source</th>
               <th className="p-3 text-left">Link</th>
@@ -77,7 +68,7 @@ export default function ModelsPage() {  // ✅ Functional component as default e
           </thead>
           <tbody>
             {models.map((model) => (
-              <tr key={model.id} className={`${darkMode ? "border-gray-700 hover:bg-gray-700" : "border-b hover:bg-gray-100"}`}>
+              <tr key={model.id} className="border-gray-700 hover:bg-gray-700">
                 <td className="p-3 flex items-center space-x-3">
                   <img src={model.image} alt={model.name} className="w-10 h-10 rounded" />
                   <div>
@@ -86,7 +77,7 @@ export default function ModelsPage() {  // ✅ Functional component as default e
                 </td>
                 <td className="p-3">{model.source}</td>
                 <td className="p-3 text-blue-400 hover:underline">
-                  <a href={`https://${model.link.replace(/^https?:\/\//, '')}`} target="_blank" rel="noopener noreferrer">
+                  <a href={`https://${model.link}`} target="_blank" rel="noopener noreferrer">
                     {model.link.length > 30 ? model.link.substring(0, 30) + "..." : model.link}
                   </a>
                 </td>
