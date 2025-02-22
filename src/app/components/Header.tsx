@@ -91,7 +91,7 @@ const Header: React.FC = () => {
 
               {/* Other Menu Items */}
               <li><Link className="nav-link" href="/categories"> Categories</Link></li> {/* Use Link component for Categories */}
-              <li><Link className="nav-link" href="https://ai.learnloner.com/"> AI Models</Link></li>
+              <li><Link className="nav-link" href="./Models"> AI Models</Link></li>
               <li>
                 <Link className="nav-link" href="/">About</Link>
               </li>
