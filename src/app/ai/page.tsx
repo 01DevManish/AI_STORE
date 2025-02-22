@@ -1,85 +1,67 @@
-'use client';
-import { useEffect, useState } from 'react';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
-import Header from '../components/Header';
+"use client";
 
-interface AI {
+import { useState, useEffect } from "react";
+import Header from "../components/Header";
+
+interface AppData {
   id: number;
   name: string;
-  category: string;
+  image: string;
   description: string;
-  file_type: string;
-  file_size: number;
-  upload_date: string;
-  developer_name: string;
-  version: string;
-  platform: string;
-  rating: number;
-  download_count: number;
-  is_active: boolean;
-  image_url: string;
-  ai_url: string;
+  category: string;
+  volume: string;
+  url: string;
 }
 
-export default function MyApp() {
-  const [data, setData] = useState<AI[]>([]);
-  const router = useRouter();
+export default function Home() {
+  const [apps, setApps] = useState<AppData[]>([]);
 
   useEffect(() => {
-    const fetchData = async () => {
-      const res = await fetch('/api/getData');
-      const result = await res.json();
-      setData(Array.isArray(result) ? result : []);
-    };
-
-    fetchData();
+    fetch("/data/apps.json")
+      .then((res) => res.json())
+      .then((data: AppData[]) => setApps(data));
   }, []);
-
-  const handleGetClick = (name: string) => {
-    const slug = name.toLowerCase().replace(/\s+/g, '-');
-    router.push(`/ai/${slug}`);
-  };
 
   return (
     <>
-      <Header />
-      <div className="bg-black text-white min-h-screen p-6">
-        <h1 className="text-3xl font-bold mb-6">AI Tools Store</h1>
-        <div className="grid gap-6 max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
-          {data.map((ai) => (
-            <div
-              key={ai.id}
-              className="bg-gray-900 p-4 rounded-xl shadow-lg hover:shadow-2xl transition-all"
-            >
-              <div className="relative w-full h-40">
-                <Image 
-                  src={ai.image_url || '/fallback.jpg'} // Fallback image
-                  alt={ai.name} 
-                  width={300} 
-                  height={160} 
-                  className="w-full h-full object-cover rounded-lg" 
-                  unoptimized // Optional: removes Next.js optimization for testing
-                />
-              </div>
-              <div className="mt-4">
-                <h2 className="text-lg font-semibold">{ai.name}</h2>
-                <p className="text-gray-400 text-sm mt-1">{ai.category}</p>
-                <p className="text-sm text-gray-300 mt-2 line-clamp-2">{ai.description}</p>
-                <div className="flex items-center justify-between mt-4">
-                  <span className="text-yellow-400 text-sm font-medium">⭐ {ai.rating}</span>
-                  <button
-                    onClick={() => handleGetClick(ai.name)}
-                    className="px-3 py-1 bg-blue-600 text-white rounded-lg text-sm hover:bg-blue-500"
-                  >
-                    Get
-                  </button>
-                </div>
+    <Header/>
+    <div className="min-h-screen bg-black text-white p-6">
+      <h1 className="text-3xl font-bold mb-6 text-center">AI Tools</h1>
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        {apps.map((app) => (
+          <div
+            key={app.id}
+            className="bg-[#111] rounded-xl shadow-md p-4 hover:shadow-lg transition border border-gray-700"
+          >
+            <div className="flex items-center gap-4">
+              <img
+                src={app.image}
+                alt={app.name}
+                className="w-16 h-16 rounded-lg object-cover bg-white p-2"
+              />
+              <div>
+                <h2 className="text-xl font-semibold">{app.name}</h2>
+                <p className="text-gray-400 text-sm">{app.description}</p>
               </div>
             </div>
-          ))}
-        </div>
+            <div className="mt-4 flex justify-between items-center text-sm text-gray-400">
+              <span>{app.volume}</span>
+              <span> {app.category}</span>
+            </div>
+            <div className="mt-4 flex justify-between items-center">
+              <a
+                href={app.url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="bg-blue-400 text-white text-xs px-3 py-1 rounded-lg"
+              >
+                <i className="fas fa-external-link-alt mr-2"></i> Visit
+              </a>
+            </div>
+          </div>
+        ))}
       </div>
+    </div>
     </>
   );
 }
