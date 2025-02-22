@@ -77,7 +77,7 @@ export default function ModelsPage() {
                 </td>
                 <td className="p-3">{model.source}</td>
                 <td className="p-3 text-blue-400 hover:underline">
-                 <a href={`https://${model.link}`} target="_blank" rel="noopener noreferrer">
+                 <a href={model.link} target="_blank" rel="noopener noreferrer">
     {model.link.length > 30 ? model.link.substring(0, 30) + "..." : model.link}
   </a>
                 </td>
