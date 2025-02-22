@@ -1,4 +1,4 @@
-"use client";
+"use client"; // Ensure it's a client component
 import { useEffect, useState } from "react";
 
 interface AIModel {
@@ -13,14 +13,14 @@ interface AIModel {
   updatedTime: string;
 }
 
-const ModelsPage: React.FC = () => {
+export default function ModelsPage() {  // ✅ Functional component as default export
   const [models, setModels] = useState<AIModel[]>([]);
   const [darkMode, setDarkMode] = useState(false);
 
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("/Models.json");
+        const response = await fetch("/models.json");
         const data = await response.json();
 
         if (!data.Models || !Array.isArray(data.Models)) {
@@ -28,7 +28,7 @@ const ModelsPage: React.FC = () => {
         }
 
         // Map and normalize data
-        const formattedModels: AIModel[] = data.Models.map((model : { [key: string]: string } , index : number) => ({
+        const formattedModels: AIModel[] = data.Models.map((model: { [key: string]: string }, index: number) => ({
           id: index + 1,
           name: model["Models"] || "Unknown Model",
           image: model["w-full src"] || "https://via.placeholder.com/50",
@@ -51,6 +51,7 @@ const ModelsPage: React.FC = () => {
   }, []);
 
   return (
+    <div className={`${darkMode ? "bg-gray-900 text-white" : "bg-gray-100 text-black"} min-h-screen p-6`}>
       <div className="flex justify-between items-center mb-6">
         <h1 className="text-3xl font-bold">AI Models</h1>
         <button
@@ -85,9 +86,9 @@ const ModelsPage: React.FC = () => {
                 </td>
                 <td className="p-3">{model.source}</td>
                 <td className="p-3 text-blue-400 hover:underline">
-                   <a href={model.link.startsWith("http") ? model.link : `https://${model.link}`} target="_blank" rel="noopener noreferrer">
-                     {model.link.length > 30 ? model.link.substring(0, 30) + "..." : model.link}
-
+                  <a href={`https://${model.link.replace(/^https?:\/\//, '')}`} target="_blank" rel="noopener noreferrer">
+                    {model.link.length > 30 ? model.link.substring(0, 30) + "..." : model.link}
+                  </a>
                 </td>
                 <td className="p-3">{model.totalRuns}</td>
                 <td className="p-3 text-purple-400 font-bold">{model.growth}</td>
@@ -100,6 +101,4 @@ const ModelsPage: React.FC = () => {
       </div>
     </div>
   );
-};
-
-export default ModelsPage;
+}
