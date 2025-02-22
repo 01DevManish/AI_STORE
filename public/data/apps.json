@@ -1,0 +1,218 @@
+[
+  {
+    "image": "https://openai.com/favicon.ico",
+    "name": "ChatGPT",
+    "description": "An AI language model developed by OpenAI, capable of generating human-like text based on input prompts.",
+    "category": "AI Assistants",
+    "volume": "14.6B",
+    "url": "https://chat.openai.com"
+  },
+  {
+    "image": "https://claude.ai/favicon.ico",
+    "name": "Claude",
+    "description": "An AI assistant designed to assist with various tasks, including answering questions and providing information.",
+    "category": "AI Assistants",
+    "volume": "N/A",
+    "url": "https://claude.ai"
+  },
+  {
+    "image": "https://gemini.ai/favicon.ico",
+    "name": "Gemini",
+    "description": "An AI tool focused on providing personalized recommendations and insights.",
+    "category": "AI Assistants",
+    "volume": "N/A",
+    "url": "https://gemini.ai"
+  },
+  {
+    "image": "https://www.synthesia.io/favicon.ico",
+    "name": "Synthesia",
+    "description": "An AI video generation platform that creates professional videos without the need for cameras or studios.",
+    "category": "Video Generation and Editing",
+    "volume": "N/A",
+    "url": "https://www.synthesia.io"
+  },
+  {
+    "image": "https://runwayml.com/favicon.ico",
+    "name": "Runway",
+    "description": "An AI-powered video editing tool that offers advanced features for content creators.",
+    "category": "Video Generation and Editing",
+    "volume": "N/A",
+    "url": "https://runwayml.com"
+  },
+  {
+    "image": "https://filmora.wondershare.com/favicon.ico",
+    "name": "Filmora",
+    "description": "A user-friendly video editing software with AI-enhanced features for seamless editing.",
+    "category": "Video Generation and Editing",
+    "volume": "N/A",
+    "url": "https://filmora.wondershare.com"
+  },
+  {
+    "image": "https://opusclip.com/favicon.ico",
+    "name": "OpusClip",
+    "description": "An AI tool that transforms long videos into engaging short clips suitable for social media.",
+    "category": "Video Generation and Editing",
+    "volume": "N/A",
+    "url": "https://opusclip.com"
+  },
+  {
+    "image": "https://fathom.video/favicon.ico",
+    "name": "Fathom",
+    "description": "An AI-driven meeting assistant that transcribes and summarizes meetings.",
+    "category": "Notetakers and Meeting Assistants",
+    "volume": "N/A",
+    "url": "https://fathom.video"
+  },
+  {
+    "image": "https://nyota.ai/favicon.ico",
+    "name": "Nyota",
+    "description": "An AI tool designed to enhance productivity by managing and organizing notes.",
+    "category": "Notetakers and Meeting Assistants",
+    "volume": "N/A",
+    "url": "https://nyota.ai"
+  },
+  {
+    "image": "https://deepresearch.ai/favicon.ico",
+    "name": "Deep Research",
+    "description": "An AI-powered research assistant that helps in gathering and analyzing information.",
+    "category": "Research",
+    "volume": "N/A",
+    "url": "https://deepresearch.ai"
+  },
+  {
+    "image": "https://rytr.me/favicon.ico",
+    "name": "Rytr",
+    "description": "An AI writing assistant that generates high-quality content based on user input.",
+    "category": "Writing",
+    "volume": "N/A",
+    "url": "https://rytr.me"
+  },
+  {
+    "image": "https://sudowrite.com/favicon.ico",
+    "name": "Sudowrite",
+    "description": "An AI tool designed to assist writers by suggesting improvements and alternatives.",
+    "category": "Writing",
+    "volume": "N/A",
+    "url": "https://sudowrite.com"
+  },
+  {
+    "image": "https://www.grammarly.com/favicon.ico",
+    "name": "Grammarly",
+    "description": "An AI-powered grammar and writing improvement tool that enhances text clarity and correctness.",
+    "category": "Grammar and Writing Improvement",
+    "volume": "N/A",
+    "url": "https://www.grammarly.com"
+  },
+  {
+    "image": "https://www.wordtune.com/favicon.ico",
+    "name": "Wordtune",
+    "description": "An AI tool that assists in rewriting and improving text for better readability.",
+    "category": "Grammar and Writing Improvement",
+    "volume": "N/A",
+    "url": "https://www.wordtune.com"
+  },
+  {
+    "image": "https://www.peacock.ai/favicon.ico",
+    "name": "Peacock",
+    "description": "An AI tool that generates high-quality creative content, including images and videos, based on user input.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://www.peacock.ai"
+  },
+  {
+    "image": "https://www.midjourney.com/favicon.ico",
+    "name": "MidJourney",
+    "description": "An AI platform that creates artistic and professional images from textual descriptions.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://www.midjourney.com"
+  },
+  {
+    "image": "https://openai.com/dall-e/favicon.ico",
+    "name": "DALL·E",
+    "description": "An AI image generation model by OpenAI that can generate images from textual prompts.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://openai.com/dall-e"
+  },
+  {
+    "image": "https://www.aiartgenerator.com/favicon.ico",
+    "name": "AI Art Generator",
+    "description": "A platform that allows users to create AI-generated art based on textual prompts.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://www.aiartgenerator.com"
+  },
+  {
+    "image": "https://deepdreamgenerator.com/favicon.ico",
+    "name": "DeepDream",
+    "description": "An AI tool that creates surreal and dream-like images from existing photos.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://deepdreamgenerator.com"
+  },
+  {
+    "image": "https://www.attn.ai/favicon.ico",
+    "name": "Attn",
+    "description": "An AI assistant designed to improve email communication and task management.",
+    "category": "AI Assistants",
+    "volume": "N/A",
+    "url": "https://www.attn.ai"
+  },
+  {
+    "image": "https://supermind.ai/favicon.ico",
+    "name": "Supermind",
+    "description": "An AI-powered tool designed to enhance focus and boost productivity through task management and reminders.",
+    "category": "Productivity",
+    "volume": "N/A",
+    "url": "https://supermind.ai"
+  },
+  {
+    "image": "https://smartwriter.ai/favicon.ico",
+    "name": "SmartWriter",
+    "description": "A writing assistant powered by AI that helps generate creative and professional content.",
+    "category": "Writing",
+    "volume": "N/A",
+    "url": "https://smartwriter.ai"
+  },
+  {
+    "image": "https://brainstormer.ai/favicon.ico",
+    "name": "Brainstormer",
+    "description": "An AI tool designed to generate creative ideas and concepts for projects and brainstorming sessions.",
+    "category": "Creative AI",
+    "volume": "N/A",
+    "url": "https://brainstormer.ai"
+  },
+  {
+    "image": "https://www.lumen5.com/favicon.ico",
+    "name": "Lumen5",
+    "description": "A video creation platform powered by AI, turning text-based content into engaging videos.",
+    "category": "Video Generation and Editing",
+    "volume": "N/A",
+    "url": "https://www.lumen5.com"
+  },
+  {
+    "image": "https://otter.ai/favicon.ico",
+    "name": "Otter.ai",
+    "description": "An AI-powered transcription service that generates accurate transcriptions for meetings and other audio.",
+    "category": "Notetakers and Meeting Assistants",
+    "volume": "N/A",
+    "url": "https://otter.ai"
+  },
+  {
+    "image": "https://www.jasper.ai/favicon.ico",
+    "name": "Jasper",
+    "description": "An AI content generation platform that creates high-quality written content for marketing, blogs, and social media.",
+    "category": "Writing",
+    "volume": "N/A",
+    "url": "https://www.jasper.ai"
+  },
+  {
+    "image": "https://www.beehiiv.com/favicon.ico",
+    "name": "Beehiiv",
+    "description": "An AI-driven newsletter platform designed to help creators and businesses build and monetize their email lists.",
+    "category": "Marketing",
+    "volume": "N/A",
+    "url": "https://www.beehiiv.com"
+  }
+]
