@@ -20,7 +20,7 @@ const ModelsPage: React.FC = () => {
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("https:./Models.json");
+        const response = await fetch("/models.json");
         const data = await response.json();
 
         if (!data.Models || !Array.isArray(data.Models)) {
