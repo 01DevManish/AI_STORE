@@ -20,7 +20,7 @@ export default function ModelsPage() {  // ✅ Functional component as default e
   useEffect(() => {
     const fetchModels = async () => {
       try {
-        const response = await fetch("/models.json");
+        const response = await fetch("/Models.json");
         const data = await response.json();
 
         if (!data.Models || !Array.isArray(data.Models)) {
