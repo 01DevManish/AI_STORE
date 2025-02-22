@@ -87,8 +87,6 @@ const ModelsPage: React.FC = () => {
                 <td className="p-3">{model.source}</td>
                 <td className="p-3 text-blue-400 hover:underline">
                   <a href={model.link} target="_blank" rel="noopener noreferrer">
-                    {model.link.length > 30 ? model.link.substring(0, 30) + "..." : model.link}
-                  </a>
                 </td>
                 <td className="p-3">{model.totalRuns}</td>
                 <td className="p-3 text-purple-400 font-bold">{model.growth}</td>
