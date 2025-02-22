@@ -92,7 +92,7 @@ const ModelsPage: React.FC = () => {
                 </td>
                 <td className="p-3">{model.totalRuns}</td>
                 <td className="p-3 text-purple-400 font-bold">{model.growth}</td>
-                <td className="p-3">{model.growthRate}</td>
+                <td className="p-3 text-green-400 font-bold">{model.growthRate}</td>
                 <td className="p-3">{model.updatedTime}</td>
               </tr>
             ))}
