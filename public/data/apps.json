@@ -1,218 +1,1013 @@
 [
   {
+    "id": 1,
     "image": "https://openai.com/favicon.ico",
     "name": "ChatGPT",
-    "description": "An AI language model developed by OpenAI, capable of generating human-like text based on input prompts.",
-    "category": "AI Assistants",
+    "description": "ChatGPT is an AI language model developed by OpenAI, designed to generate human-like text based on input prompts. It's versatile, assisting in tasks like drafting emails, writing code, and answering questions.",
+    "category": "AI Assistant",
     "volume": "14.6B",
-    "url": "https://chat.openai.com"
+    "url": "https://chat.openai.com",
+    "rating": 4.8,
+    "review": "Revolutionary in generating human-like text, though occasional inaccuracies may occur.",
+    "features": "It provides text generation, coding help, translation, and question answering with human-like accuracy.",
+    "country": "USA",
+    "metadata": "ChatGPT is an advanced AI assistant capable of understanding and generating human-like text, aiding in various applications from content creation to customer support.",
+    "alt_text": "ChatGPT",
+    "additional_info": {
+      "developed_by": "OpenAI",
+      "produced_by": "OpenAI",
+      "released_by": "OpenAI",
+      "category": "Large Language Model",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German",
+        "Chinese",
+        "Japanese"
+      ]
+    }
   },
   {
-    "image": "https://claude.ai/favicon.ico",
-    "name": "Claude",
-    "description": "An AI assistant designed to assist with various tasks, including answering questions and providing information.",
+    "id": 2,
+    "image": "https://www.google.com/favicon.ico",
+    "name": "Google Bard",
+    "description": "An AI chatbot developed by Google, designed to assist with creative writing, coding, and information retrieval.",
     "category": "AI Assistants",
-    "volume": "N/A",
-    "url": "https://claude.ai"
+    "volume": "10.2B",
+    "url": "https://bard.google.com",
+    "rating": 4.5,
+    "review": "A powerful AI chatbot with a focus on creativity and information retrieval.",
+    "features": "Creative writing, coding assistance, and information retrieval.",
+    "country": "USA",
+    "metadata": "Google Bard is a conversational AI designed to assist users with creative and technical tasks.",
+    "alt_text": "Google Bard",
+    "additional_info": {
+      "developed_by": "Google",
+      "produced_by": "Google",
+      "released_by": "Google",
+      "category": "Chatbot",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German",
+        "Chinese",
+        "Japanese"
+      ]
+    }
   },
   {
-    "image": "https://gemini.ai/favicon.ico",
-    "name": "Gemini",
-    "description": "An AI tool focused on providing personalized recommendations and insights.",
-    "category": "AI Assistants",
-    "volume": "N/A",
-    "url": "https://gemini.ai"
-  },
-  {
-    "image": "https://www.synthesia.io/favicon.ico",
-    "name": "Synthesia",
-    "description": "An AI video generation platform that creates professional videos without the need for cameras or studios.",
-    "category": "Video Generation and Editing",
-    "volume": "N/A",
-    "url": "https://www.synthesia.io"
-  },
-  {
-    "image": "https://runwayml.com/favicon.ico",
-    "name": "Runway",
-    "description": "An AI-powered video editing tool that offers advanced features for content creators.",
-    "category": "Video Generation and Editing",
-    "volume": "N/A",
-    "url": "https://runwayml.com"
-  },
-  {
-    "image": "https://filmora.wondershare.com/favicon.ico",
-    "name": "Filmora",
-    "description": "A user-friendly video editing software with AI-enhanced features for seamless editing.",
-    "category": "Video Generation and Editing",
-    "volume": "N/A",
-    "url": "https://filmora.wondershare.com"
-  },
-  {
-    "image": "https://opusclip.com/favicon.ico",
-    "name": "OpusClip",
-    "description": "An AI tool that transforms long videos into engaging short clips suitable for social media.",
-    "category": "Video Generation and Editing",
-    "volume": "N/A",
-    "url": "https://opusclip.com"
-  },
-  {
-    "image": "https://fathom.video/favicon.ico",
-    "name": "Fathom",
-    "description": "An AI-driven meeting assistant that transcribes and summarizes meetings.",
-    "category": "Notetakers and Meeting Assistants",
-    "volume": "N/A",
-    "url": "https://fathom.video"
-  },
-  {
-    "image": "https://nyota.ai/favicon.ico",
-    "name": "Nyota",
-    "description": "An AI tool designed to enhance productivity by managing and organizing notes.",
-    "category": "Notetakers and Meeting Assistants",
-    "volume": "N/A",
-    "url": "https://nyota.ai"
-  },
-  {
-    "image": "https://deepresearch.ai/favicon.ico",
-    "name": "Deep Research",
-    "description": "An AI-powered research assistant that helps in gathering and analyzing information.",
-    "category": "Research",
-    "volume": "N/A",
-    "url": "https://deepresearch.ai"
-  },
-  {
-    "image": "https://rytr.me/favicon.ico",
-    "name": "Rytr",
-    "description": "An AI writing assistant that generates high-quality content based on user input.",
-    "category": "Writing",
-    "volume": "N/A",
-    "url": "https://rytr.me"
-  },
-  {
-    "image": "https://sudowrite.com/favicon.ico",
-    "name": "Sudowrite",
-    "description": "An AI tool designed to assist writers by suggesting improvements and alternatives.",
-    "category": "Writing",
-    "volume": "N/A",
-    "url": "https://sudowrite.com"
-  },
-  {
-    "image": "https://www.grammarly.com/favicon.ico",
-    "name": "Grammarly",
-    "description": "An AI-powered grammar and writing improvement tool that enhances text clarity and correctness.",
-    "category": "Grammar and Writing Improvement",
-    "volume": "N/A",
-    "url": "https://www.grammarly.com"
-  },
-  {
-    "image": "https://www.wordtune.com/favicon.ico",
-    "name": "Wordtune",
-    "description": "An AI tool that assists in rewriting and improving text for better readability.",
-    "category": "Grammar and Writing Improvement",
-    "volume": "N/A",
-    "url": "https://www.wordtune.com"
-  },
-  {
-    "image": "https://www.peacock.ai/favicon.ico",
-    "name": "Peacock",
-    "description": "An AI tool that generates high-quality creative content, including images and videos, based on user input.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://www.peacock.ai"
-  },
-  {
+    "id": 3,
     "image": "https://www.midjourney.com/favicon.ico",
     "name": "MidJourney",
-    "description": "An AI platform that creates artistic and professional images from textual descriptions.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://www.midjourney.com"
+    "description": "An AI-powered tool for generating high-quality images from text descriptions.",
+    "category": "AI Art Generators",
+    "volume": "8.9B",
+    "url": "https://www.midjourney.com",
+    "rating": 4.7,
+    "review": "Exceptional image generation capabilities, though it requires precise prompts.",
+    "features": "Generates high-quality images from text prompts.",
+    "country": "USA",
+    "metadata": "MidJourney is an AI tool that transforms text descriptions into stunning visual art.",
+    "alt_text": "MidJourney",
+    "additional_info": {
+      "developed_by": "MidJourney",
+      "produced_by": "MidJourney",
+      "released_by": "MidJourney",
+      "category": "AI Art Generator",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://openai.com/dall-e/favicon.ico",
-    "name": "DALL·E",
-    "description": "An AI image generation model by OpenAI that can generate images from textual prompts.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://openai.com/dall-e"
+    "id": 4,
+    "image": "https://www.deepmind.com/favicon.ico",
+    "name": "AlphaFold",
+    "description": "An AI system by DeepMind that predicts protein structures with high accuracy.",
+    "category": "AI in Science",
+    "volume": "7.5B",
+    "url": "https://www.deepmind.com/alphafold",
+    "rating": 4.9,
+    "review": "A groundbreaking tool for protein structure prediction, revolutionizing biology.",
+    "features": "Predicts protein structures with high accuracy.",
+    "country": "UK",
+    "metadata": "AlphaFold is a revolutionary AI tool for predicting protein structures, aiding scientific research.",
+    "alt_text": "AlphaFold",
+    "additional_info": {
+      "developed_by": "DeepMind",
+      "produced_by": "DeepMind",
+      "released_by": "DeepMind",
+      "category": "AI in Biology",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://www.aiartgenerator.com/favicon.ico",
-    "name": "AI Art Generator",
-    "description": "A platform that allows users to create AI-generated art based on textual prompts.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://www.aiartgenerator.com"
+    "id": 5,
+    "image": "https://www.huggingface.co/favicon.ico",
+    "name": "Hugging Face",
+    "description": "A platform offering state-of-the-art natural language processing models and tools.",
+    "category": "AI Development",
+    "volume": "6.8B",
+    "url": "https://www.huggingface.co",
+    "rating": 4.6,
+    "review": "A versatile platform for NLP models, widely used in the AI community.",
+    "features": "Offers pre-trained NLP models, datasets, and tools for AI development.",
+    "country": "USA",
+    "metadata": "Hugging Face is a leading platform for natural language processing and AI development.",
+    "alt_text": "Hugging Face",
+    "additional_info": {
+      "developed_by": "Hugging Face",
+      "produced_by": "Hugging Face",
+      "released_by": "Hugging Face",
+      "category": "NLP Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German",
+        "Chinese",
+        "Japanese"
+      ]
+    }
   },
   {
-    "image": "https://deepdreamgenerator.com/favicon.ico",
-    "name": "DeepDream",
-    "description": "An AI tool that creates surreal and dream-like images from existing photos.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://deepdreamgenerator.com"
+    "id": 6,
+    "image": "https://www.stability.ai/favicon.ico",
+    "name": "Stable Diffusion",
+    "description": "An open-source AI model for generating images from text prompts.",
+    "category": "AI Art Generators",
+    "volume": "6.3B",
+    "url": "https://www.stability.ai",
+    "rating": 4.5,
+    "review": "A powerful open-source tool for generating high-quality images.",
+    "features": "Generates images from text prompts, open-source and customizable.",
+    "country": "USA",
+    "metadata": "Stable Diffusion is an open-source AI model for creating images from text descriptions.",
+    "alt_text": "Stable Diffusion",
+    "additional_info": {
+      "developed_by": "Stability AI",
+      "produced_by": "Stability AI",
+      "released_by": "Stability AI",
+      "category": "AI Art Generator",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://www.attn.ai/favicon.ico",
-    "name": "Attn",
-    "description": "An AI assistant designed to improve email communication and task management.",
+    "id": 7,
+    "image": "https://www.anthropic.com/favicon.ico",
+    "name": "Claude",
+    "description": "An AI assistant developed by Anthropic, focused on safety and helpfulness in conversational AI.",
     "category": "AI Assistants",
-    "volume": "N/A",
-    "url": "https://www.attn.ai"
+    "volume": "5.7B",
+    "url": "https://www.anthropic.com",
+    "rating": 4.4,
+    "review": "A safe and helpful AI assistant, though less versatile than some competitors.",
+    "features": "Conversational AI, focused on safety and helpfulness.",
+    "country": "USA",
+    "metadata": "Claude is an AI assistant designed with a focus on safety and user-friendly interactions.",
+    "alt_text": "Claude",
+    "additional_info": {
+      "developed_by": "Anthropic",
+      "produced_by": "Anthropic",
+      "released_by": "Anthropic",
+      "category": "AI Assistant",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://supermind.ai/favicon.ico",
-    "name": "Supermind",
-    "description": "An AI-powered tool designed to enhance focus and boost productivity through task management and reminders.",
-    "category": "Productivity",
-    "volume": "N/A",
-    "url": "https://supermind.ai"
+    "id": 8,
+    "image": "https://www.ibm.com/favicon.ico",
+    "name": "IBM Watson",
+    "description": "An AI platform offering solutions for businesses, including NLP, data analysis, and automation.",
+    "category": "AI for Business",
+    "volume": "5.1B",
+    "url": "https://www.ibm.com/watson",
+    "rating": 4.3,
+    "review": "A robust AI platform for businesses, though it can be complex to implement.",
+    "features": "NLP, data analysis, automation, and business solutions.",
+    "country": "USA",
+    "metadata": "IBM Watson is a comprehensive AI platform designed for business applications.",
+    "alt_text": "IBM Watson",
+    "additional_info": {
+      "developed_by": "IBM",
+      "produced_by": "IBM",
+      "released_by": "IBM",
+      "category": "AI Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German",
+        "Chinese",
+        "Japanese"
+      ]
+    }
   },
   {
-    "image": "https://smartwriter.ai/favicon.ico",
-    "name": "SmartWriter",
-    "description": "A writing assistant powered by AI that helps generate creative and professional content.",
-    "category": "Writing",
-    "volume": "N/A",
-    "url": "https://smartwriter.ai"
+    "id": 9,
+    "image": "https://www.tensorflow.org/favicon.ico",
+    "name": "TensorFlow",
+    "description": "An open-source machine learning framework developed by Google for building and deploying AI models.",
+    "category": "AI Development",
+    "volume": "4.8B",
+    "url": "https://www.tensorflow.org",
+    "rating": 4.7,
+    "review": "A powerful and flexible framework for AI development, widely used in the industry.",
+    "features": "Open-source, supports deep learning, and scalable for production.",
+    "country": "USA",
+    "metadata": "TensorFlow is a leading open-source framework for machine learning and AI development.",
+    "alt_text": "TensorFlow",
+    "additional_info": {
+      "developed_by": "Google",
+      "produced_by": "Google",
+      "released_by": "Google",
+      "category": "Machine Learning Framework",
+      "supported_languages": [
+       
+      ]
+    }
   },
   {
-    "image": "https://brainstormer.ai/favicon.ico",
-    "name": "Brainstormer",
-    "description": "An AI tool designed to generate creative ideas and concepts for projects and brainstorming sessions.",
-    "category": "Creative AI",
-    "volume": "N/A",
-    "url": "https://brainstormer.ai"
+    "id": 10,
+    "image": "https://www.openai.com/favicon.ico",
+    "name": "DALL-E",
+    "description": "An AI model by OpenAI that generates images from textual descriptions.",
+    "category": "AI Art Generators",
+    "volume": "4.5B",
+    "url": "https://www.openai.com/dall-e",
+    "rating": 4.6,
+    "review": "A revolutionary tool for generating images from text, though it requires precise prompts.",
+    "features": "Generates images from text descriptions.",
+    "country": "USA",
+    "metadata": "DALL-E is an AI model that creates images from textual prompts, enabling creative applications.",
+    "alt_text": "DALL-E",
+    "additional_info": {
+      "developed_by": "OpenAI",
+      "produced_by": "OpenAI",
+      "released_by": "OpenAI",
+      "category": "AI Art Generator",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://www.lumen5.com/favicon.ico",
-    "name": "Lumen5",
-    "description": "A video creation platform powered by AI, turning text-based content into engaging videos.",
-    "category": "Video Generation and Editing",
-    "volume": "N/A",
-    "url": "https://www.lumen5.com"
+    "id": 11,
+    "image": "https://www.microsoft.com/favicon.ico",
+    "name": "Microsoft Copilot",
+    "description": "An AI-powered coding assistant integrated into Visual Studio, helping developers write code faster and more efficiently.",
+    "category": "AI for Developers",
+    "volume": "4.2B",
+    "url": "https://www.microsoft.com/copilot",
+    "rating": 4.5,
+    "review": "A game-changer for developers, though it requires familiarity with Visual Studio.",
+    "features": "Code completion, debugging assistance, and code suggestions.",
+    "country": "USA",
+    "metadata": "Microsoft Copilot is an AI-powered coding assistant designed to enhance developer productivity.",
+    "alt_text": "Microsoft Copilot",
+    "additional_info": {
+      "developed_by": "Microsoft",
+      "produced_by": "Microsoft",
+      "released_by": "Microsoft",
+      "category": "AI Coding Assistant",
+      "supported_languages": [
+        
+      ]
+    }
   },
   {
-    "image": "https://otter.ai/favicon.ico",
-    "name": "Otter.ai",
-    "description": "An AI-powered transcription service that generates accurate transcriptions for meetings and other audio.",
-    "category": "Notetakers and Meeting Assistants",
-    "volume": "N/A",
-    "url": "https://otter.ai"
+    "id": 12,
+    "image": "https://www.salesforce.com/favicon.ico",
+    "name": "Einstein AI",
+    "description": "Salesforce's AI platform that provides predictive analytics, personalized recommendations, and automation for businesses.",
+    "category": "AI for Business",
+    "volume": "3.9B",
+    "url": "https://www.salesforce.com/products/einstein",
+    "rating": 4.4,
+    "review": "A powerful AI platform for businesses, though it can be complex to set up.",
+    "features": "Predictive analytics, personalized recommendations, and automation.",
+    "country": "USA",
+    "metadata": "Einstein AI is Salesforce's AI platform designed to enhance business operations and customer engagement.",
+    "alt_text": "Einstein AI",
+    "additional_info": {
+      "developed_by": "Salesforce",
+      "produced_by": "Salesforce",
+      "released_by": "Salesforce",
+      "category": "Business AI Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
   },
   {
+    "id": 13,
+    "image": "https://www.nvidia.com/favicon.ico",
+    "name": "NVIDIA DGX",
+    "description": "A suite of AI supercomputers designed for deep learning and AI research, powered by NVIDIA GPUs.",
+    "category": "AI Hardware",
+    "volume": "3.7B",
+    "url": "https://www.nvidia.com/en-us/data-center/dgx-systems",
+    "rating": 4.8,
+    "review": "A top-tier AI hardware solution for researchers and enterprises.",
+    "features": "High-performance computing, deep learning capabilities, and scalability.",
+    "country": "USA",
+    "metadata": "NVIDIA DGX is a powerful AI supercomputer designed for deep learning and AI research.",
+    "alt_text": "NVIDIA DGX",
+    "additional_info": {
+      "developed_by": "NVIDIA",
+      "produced_by": "NVIDIA",
+      "released_by": "NVIDIA",
+      "category": "AI Supercomputer",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 14,
+    "image": "https://www.aws.amazon.com/favicon.ico",
+    "name": "Amazon SageMaker",
+    "description": "A fully managed service by AWS for building, training, and deploying machine learning models at scale.",
+    "category": "AI Development",
+    "volume": "3.5B",
+    "url": "https://aws.amazon.com/sagemaker",
+    "rating": 4.6,
+    "review": "A comprehensive tool for machine learning, though it requires AWS expertise.",
+    "features": "Model building, training, deployment, and monitoring.",
+    "country": "USA",
+    "metadata": "Amazon SageMaker is a fully managed service for machine learning development and deployment.",
+    "alt_text": "Amazon SageMaker",
+    "additional_info": {
+      "developed_by": "Amazon",
+      "produced_by": "Amazon",
+      "released_by": "Amazon",
+      "category": "Machine Learning Platform",
+      "supported_languages": [
+        "Python",
+        "R",
+        "Java"
+      ]
+    }
+  },
+  {
+    "id": 15,
+    "image": "https://www.grammarly.com/favicon.ico",
+    "name": "GrammarlyGO",
+    "description": "An AI-powered writing assistant that helps users improve their grammar, tone, and clarity in real-time.",
+    "category": "AI Writing Tools",
+    "volume": "3.3B",
+    "url": "https://www.grammarly.com/grammarlygo",
+    "rating": 4.7,
+    "review": "A must-have tool for writers, though the premium version is pricey.",
+    "features": "Grammar checking, tone suggestions, and clarity improvements.",
+    "country": "USA",
+    "metadata": "GrammarlyGO is an AI-powered writing assistant designed to enhance writing quality.",
+    "alt_text": "GrammarlyGO",
+    "additional_info": {
+      "developed_by": "Grammarly",
+      "produced_by": "Grammarly",
+      "released_by": "Grammarly",
+      "category": "Writing Assistant",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 16,
+    "image": "https://www.runwayml.com/favicon.ico",
+    "name": "Runway ML",
+    "description": "A creative toolkit for artists and designers, offering AI tools for video editing, image generation, and more.",
+    "category": "AI Art Generators",
+    "volume": "3.1B",
+    "url": "https://www.runwayml.com",
+    "rating": 4.5,
+    "review": "A versatile tool for creative professionals, though it has a learning curve.",
+    "features": "Video editing, image generation, and creative AI tools.",
+    "country": "USA",
+    "metadata": "Runway ML is a creative toolkit designed for artists and designers using AI.",
+    "alt_text": "Runway ML",
+    "additional_info": {
+      "developed_by": "Runway",
+      "produced_by": "Runway",
+      "released_by": "Runway",
+      "category": "Creative AI Toolkit",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 17,
+    "image": "https://www.replicate.com/favicon.ico",
+    "name": "Replicate",
+    "description": "A platform for running and deploying machine learning models in the cloud with ease.",
+    "category": "AI Development",
+    "volume": "2.9B",
+    "url": "https://www.replicate.com",
+    "rating": 4.4,
+    "review": "A user-friendly platform for deploying AI models, though it can be costly for large-scale projects.",
+    "features": "Model deployment, cloud integration, and scalability.",
+    "country": "USA",
+    "metadata": "Replicate is a platform for deploying and running machine learning models in the cloud.",
+    "alt_text": "Replicate",
+    "additional_info": {
+      "developed_by": "Replicate",
+      "produced_by": "Replicate",
+      "released_by": "Replicate",
+      "category": "AI Deployment Platform",
+      "supported_languages": [
+        "Python"
+      ]
+    }
+  },
+  {
+    "id": 18,
+    "image": "https://www.assemblyai.com/favicon.ico",
+    "name": "AssemblyAI",
+    "description": "An API for speech-to-text transcription and natural language understanding, powered by AI.",
+    "category": "AI APIs",
+    "volume": "2.7B",
+    "url": "https://www.assemblyai.com",
+    "rating": 4.6,
+    "review": "A reliable API for transcription and NLP tasks, though pricing can add up.",
+    "features": "Speech-to-text transcription, natural language understanding, and sentiment analysis.",
+    "country": "USA",
+    "metadata": "AssemblyAI is an API platform for speech-to-text and NLP tasks.",
+    "alt_text": "AssemblyAI",
+    "additional_info": {
+      "developed_by": "AssemblyAI",
+      "produced_by": "AssemblyAI",
+      "released_by": "AssemblyAI",
+      "category": "Speech-to-Text API",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
+  },
+  {
+    "id": 19,
     "image": "https://www.jasper.ai/favicon.ico",
-    "name": "Jasper",
-    "description": "An AI content generation platform that creates high-quality written content for marketing, blogs, and social media.",
-    "category": "Writing",
-    "volume": "N/A",
-    "url": "https://www.jasper.ai"
+    "name": "Jasper AI",
+    "description": "An AI writing assistant designed for creating marketing copy, blogs, and other content.",
+    "category": "AI Writing Tools",
+    "volume": "2.5B",
+    "url": "https://www.jasper.ai",
+    "rating": 4.5,
+    "review": "A powerful tool for content creation, though it requires careful editing.",
+    "features": "Content generation, marketing copy, and blog writing.",
+    "country": "USA",
+    "metadata": "Jasper AI is an AI-powered writing assistant for creating high-quality content.",
+    "alt_text": "Jasper AI",
+    "additional_info": {
+      "developed_by": "Jasper",
+      "produced_by": "Jasper",
+      "released_by": "Jasper",
+      "category": "Writing Assistant",
+      "supported_languages": [
+        "English"
+      ]
+    }
   },
   {
-    "image": "https://www.beehiiv.com/favicon.ico",
-    "name": "Beehiiv",
-    "description": "An AI-driven newsletter platform designed to help creators and businesses build and monetize their email lists.",
-    "category": "Marketing",
-    "volume": "N/A",
-    "url": "https://www.beehiiv.com"
+    "id": 20,
+    "image": "https://www.leonardo.ai/favicon.ico",
+    "name": "Leonardo AI",
+    "description": "An AI platform for generating high-quality art and designs from text prompts.",
+    "category": "AI Art Generators",
+    "volume": "2.3B",
+    "url": "https://www.leonardo.ai",
+    "rating": 4.4,
+    "review": "A great tool for generating art, though it requires precise prompts.",
+    "features": "Art generation, design tools, and creative AI.",
+    "country": "USA",
+    "metadata": "Leonardo AI is a platform for generating art and designs using AI.",
+    "alt_text": "Leonardo AI",
+    "additional_info": {
+      "developed_by": "Leonardo",
+      "produced_by": "Leonardo",
+      "released_by": "Leonardo",
+      "category": "AI Art Generator",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 21,
+    "image": "https://www.synthesia.io/favicon.ico",
+    "name": "Synthesia",
+    "description": "An AI video generation platform that allows users to create videos with AI avatars and voiceovers.",
+    "category": "AI Video Tools",
+    "volume": "2.1B",
+    "url": "https://www.synthesia.io",
+    "rating": 4.5,
+    "review": "A revolutionary tool for creating videos with AI avatars, though it can be expensive.",
+    "features": "AI avatars, voiceovers, and video generation.",
+    "country": "UK",
+    "metadata": "Synthesia is an AI-powered platform for creating videos with AI avatars and voiceovers.",
+    "alt_text": "Synthesia",
+    "additional_info": {
+      "developed_by": "Synthesia",
+      "produced_by": "Synthesia",
+      "released_by": "Synthesia",
+      "category": "AI Video Generator",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
+  },
+  {
+    "id": 22,
+    "image": "https://www.descript.com/favicon.ico",
+    "name": "Descript",
+    "description": "An AI-powered video and audio editing tool that simplifies editing through transcription and voice cloning.",
+    "category": "AI Video Tools",
+    "volume": "2.0B",
+    "url": "https://www.descript.com",
+    "rating": 4.6,
+    "review": "A game-changer for video and audio editing, though it has a learning curve.",
+    "features": "Transcription, voice cloning, and video editing.",
+    "country": "USA",
+    "metadata": "Descript is an AI-powered tool for video and audio editing, making the process faster and easier.",
+    "alt_text": "Descript",
+    "additional_info": {
+      "developed_by": "Descript",
+      "produced_by": "Descript",
+      "released_by": "Descript",
+      "category": "Video and Audio Editing",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 23,
+    "image": "https://www.opa.ai/favicon.ico",
+    "name": "Opa AI",
+    "description": "An AI platform for automating customer support and engagement through conversational AI.",
+    "category": "AI for Business",
+    "volume": "1.9B",
+    "url": "https://www.opa.ai",
+    "rating": 4.3,
+    "review": "A useful tool for automating customer support, though it requires customization.",
+    "features": "Conversational AI, customer support automation, and engagement tools.",
+    "country": "USA",
+    "metadata": "Opa AI is a platform for automating customer support and engagement using AI.",
+    "alt_text": "Opa AI",
+    "additional_info": {
+      "developed_by": "Opa AI",
+      "produced_by": "Opa AI",
+      "released_by": "Opa AI",
+      "category": "Customer Support AI",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French"
+      ]
+    }
+  },
+  {
+    "id": 24,
+    "image": "https://www.deepai.org/favicon.ico",
+    "name": "DeepAI",
+    "description": "A platform offering AI tools for image generation, text analysis, and machine learning APIs.",
+    "category": "AI Development",
+    "volume": "1.8B",
+    "url": "https://www.deepai.org",
+    "rating": 4.4,
+    "review": "A versatile platform for AI tools, though some features are limited in the free version.",
+    "features": "Image generation, text analysis, and machine learning APIs.",
+    "country": "USA",
+    "metadata": "DeepAI is a platform offering a variety of AI tools for developers and businesses.",
+    "alt_text": "DeepAI",
+    "additional_info": {
+      "developed_by": "DeepAI",
+      "produced_by": "DeepAI",
+      "released_by": "DeepAI",
+      "category": "AI Tools Platform",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 25,
+    "image": "https://www.voiceflow.com/favicon.ico",
+    "name": "Voiceflow",
+    "description": "A collaborative platform for designing, prototyping, and building voice and chat assistants.",
+    "category": "AI Assistants",
+    "volume": "1.7B",
+    "url": "https://www.voiceflow.com",
+    "rating": 4.5,
+    "review": "A powerful tool for building voice and chat assistants, though it requires technical expertise.",
+    "features": "Voice and chat assistant design, prototyping, and deployment.",
+    "country": "Canada",
+    "metadata": "Voiceflow is a platform for designing and building voice and chat assistants.",
+    "alt_text": "Voiceflow",
+    "additional_info": {
+      "developed_by": "Voiceflow",
+      "produced_by": "Voiceflow",
+      "released_by": "Voiceflow",
+      "category": "Voice and Chat Assistant Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French"
+      ]
+    }
+  },
+  {
+    "id": 26,
+    "image": "https://www.ai21.com/favicon.ico",
+    "name": "AI21 Studio",
+    "description": "A platform for building AI-powered text applications, including summarization and content generation.",
+    "category": "AI Writing Tools",
+    "volume": "1.6B",
+    "url": "https://www.ai21.com",
+    "rating": 4.4,
+    "review": "A useful platform for text-based AI applications, though it can be complex to use.",
+    "features": "Text summarization, content generation, and NLP tools.",
+    "country": "Israel",
+    "metadata": "AI21 Studio is a platform for building AI-powered text applications.",
+    "alt_text": "AI21 Studio",
+    "additional_info": {
+      "developed_by": "AI21 Labs",
+      "produced_by": "AI21 Labs",
+      "released_by": "AI21 Labs",
+      "category": "Text AI Platform",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 27,
+    "image": "https://www.pictory.ai/favicon.ico",
+    "name": "Pictory",
+    "description": "An AI tool for creating short, engaging videos from long-form content like blogs and scripts.",
+    "category": "AI Video Tools",
+    "volume": "1.5B",
+    "url": "https://www.pictory.ai",
+    "rating": 4.3,
+    "review": "A great tool for creating videos from text, though it requires high-quality input.",
+    "features": "Video creation from text, automatic summarization, and editing tools.",
+    "country": "USA",
+    "metadata": "Pictory is an AI-powered tool for creating videos from long-form content.",
+    "alt_text": "Pictory",
+    "additional_info": {
+      "developed_by": "Pictory",
+      "produced_by": "Pictory",
+      "released_by": "Pictory",
+      "category": "Video Creation Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 28,
+    "image": "https://www.copy.ai/favicon.ico",
+    "name": "Copy.ai",
+    "description": "An AI-powered tool for generating marketing copy, social media posts, and other written content.",
+    "category": "AI Writing Tools",
+    "volume": "1.4B",
+    "url": "https://www.copy.ai",
+    "rating": 4.5,
+    "review": "A versatile tool for generating marketing content, though it requires careful editing.",
+    "features": "Marketing copy generation, social media posts, and content ideas.",
+    "country": "USA",
+    "metadata": "Copy.ai is an AI-powered tool for generating marketing and social media content.",
+    "alt_text": "Copy.ai",
+    "additional_info": {
+      "developed_by": "Copy.ai",
+      "produced_by": "Copy.ai",
+      "released_by": "Copy.ai",
+      "category": "Marketing AI Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 29,
+    "image": "https://www.lovo.ai/favicon.ico",
+    "name": "LOVO AI",
+    "description": "An AI voice generation platform that creates realistic voiceovers for videos, podcasts, and more.",
+    "category": "AI Audio Tools",
+    "volume": "1.3B",
+    "url": "https://www.lovo.ai",
+    "rating": 4.4,
+    "review": "A powerful tool for voice generation, though some voices sound robotic.",
+    "features": "Voice generation, voice cloning, and audio editing.",
+    "country": "USA",
+    "metadata": "LOVO AI is a platform for generating realistic voiceovers using AI.",
+    "alt_text": "LOVO AI",
+    "additional_info": {
+      "developed_by": "LOVO AI",
+      "produced_by": "LOVO AI",
+      "released_by": "LOVO AI",
+      "category": "Voice Generation Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
+  },
+  {
+    "id": 30,
+    "image": "https://www.krisp.ai/favicon.ico",
+    "name": "Krisp",
+    "description": "An AI-powered noise cancellation tool for clear audio during calls and recordings.",
+    "category": "AI Audio Tools",
+    "volume": "1.2B",
+    "url": "https://www.krisp.ai",
+    "rating": 4.7,
+    "review": "A must-have tool for clear audio, though it can be resource-intensive.",
+    "features": "Noise cancellation, voice clarity, and background noise removal.",
+    "country": "USA",
+    "metadata": "Krisp is an AI-powered tool for noise cancellation during calls and recordings.",
+    "alt_text": "Krisp",
+    "additional_info": {
+      "developed_by": "Krisp",
+      "produced_by": "Krisp",
+      "released_by": "Krisp",
+      "category": "Noise Cancellation Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 31,
+    "image": "https://www.otter.ai/favicon.ico",
+    "name": "Otter.ai",
+    "description": "An AI-powered transcription tool that converts speech to text in real-time for meetings, interviews, and more.",
+    "category": "AI Transcription",
+    "volume": "1.1B",
+    "url": "https://www.otter.ai",
+    "rating": 4.6,
+    "review": "A reliable tool for transcription, though it can struggle with heavy accents.",
+    "features": "Real-time transcription, meeting notes, and voice recognition.",
+    "country": "USA",
+    "metadata": "Otter.ai is an AI-powered transcription tool for converting speech to text in real-time.",
+    "alt_text": "Otter.ai",
+    "additional_info": {
+      "developed_by": "Otter.ai",
+      "produced_by": "Otter.ai",
+      "released_by": "Otter.ai",
+      "category": "Transcription Tool",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
+  },
+  {
+    "id": 32,
+    "image": "https://www.notion.so/favicon.ico",
+    "name": "Notion AI",
+    "description": "An AI-powered productivity tool integrated into Notion, helping with writing, summarization, and task management.",
+    "category": "AI Productivity",
+    "volume": "1.0B",
+    "url": "https://www.notion.so/product/ai",
+    "rating": 4.5,
+    "review": "A useful addition to Notion, though it requires a subscription.",
+    "features": "Writing assistance, summarization, and task management.",
+    "country": "USA",
+    "metadata": "Notion AI is an AI-powered productivity tool integrated into the Notion platform.",
+    "alt_text": "Notion AI",
+    "additional_info": {
+      "developed_by": "Notion",
+      "produced_by": "Notion",
+      "released_by": "Notion",
+      "category": "Productivity Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 33,
+    "image": "https://www.quillbot.com/favicon.ico",
+    "name": "QuillBot",
+    "description": "An AI-powered paraphrasing and grammar-checking tool for improving writing clarity and style.",
+    "category": "AI Writing Tools",
+    "volume": "950M",
+    "url": "https://www.quillbot.com",
+    "rating": 4.4,
+    "review": "A great tool for paraphrasing, though the free version has limitations.",
+    "features": "Paraphrasing, grammar checking, and writing suggestions.",
+    "country": "USA",
+    "metadata": "QuillBot is an AI-powered tool for improving writing clarity and style.",
+    "alt_text": "QuillBot",
+    "additional_info": {
+      "developed_by": "QuillBot",
+      "produced_by": "QuillBot",
+      "released_by": "QuillBot",
+      "category": "Writing Assistant",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 34,
+    "image": "https://www.murf.ai/favicon.ico",
+    "name": "Murf AI",
+    "description": "An AI voice generator that creates realistic voiceovers for videos, presentations, and e-learning content.",
+    "category": "AI Audio Tools",
+    "volume": "900M",
+    "url": "https://www.murf.ai",
+    "rating": 4.5,
+    "review": "A powerful tool for voiceovers, though some voices sound robotic.",
+    "features": "Voice generation, voice cloning, and audio editing.",
+    "country": "USA",
+    "metadata": "Murf AI is an AI-powered platform for generating realistic voiceovers.",
+    "alt_text": "Murf AI",
+    "additional_info": {
+      "developed_by": "Murf AI",
+      "produced_by": "Murf AI",
+      "released_by": "Murf AI",
+      "category": "Voice Generation Platform",
+      "supported_languages": [
+        "English",
+        "Spanish",
+        "French",
+        "German"
+      ]
+    }
+  },
+  {
+    "id": 35,
+    "image": "https://www.rytr.me/favicon.ico",
+    "name": "Rytr",
+    "description": "An AI writing assistant that helps users generate content for blogs, emails, ads, and more.",
+    "category": "AI Writing Tools",
+    "volume": "850M",
+    "url": "https://www.rytr.me",
+    "rating": 4.3,
+    "review": "A versatile tool for content generation, though it requires careful editing.",
+    "features": "Content generation, writing assistance, and tone adjustment.",
+    "country": "USA",
+    "metadata": "Rytr is an AI-powered writing assistant for generating high-quality content.",
+    "alt_text": "Rytr",
+    "additional_info": {
+      "developed_by": "Rytr",
+      "produced_by": "Rytr",
+      "released_by": "Rytr",
+      "category": "Writing Assistant",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 36,
+    "image": "https://www.writesonic.com/favicon.ico",
+    "name": "Writesonic",
+    "description": "An AI writing tool for creating SEO-optimized content, ads, and landing pages.",
+    "category": "AI Writing Tools",
+    "volume": "800M",
+    "url": "https://www.writesonic.com",
+    "rating": 4.4,
+    "review": "A powerful tool for SEO content, though it can be expensive.",
+    "features": "SEO-optimized content generation, ad copy, and landing pages.",
+    "country": "USA",
+    "metadata": "Writesonic is an AI-powered writing tool for creating SEO-optimized content.",
+    "alt_text": "Writesonic",
+    "additional_info": {
+      "developed_by": "Writesonic",
+      "produced_by": "Writesonic",
+      "released_by": "Writesonic",
+      "category": "SEO Writing Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 37,
+    "image": "https://www.akool.com/favicon.ico",
+    "name": "Akool",
+    "description": "An AI platform for creating personalized marketing content, including images and videos.",
+    "category": "AI Marketing Tools",
+    "volume": "750M",
+    "url": "https://www.akool.com",
+    "rating": 4.2,
+    "review": "A useful tool for marketing content, though it requires customization.",
+    "features": "Personalized marketing content, image and video generation.",
+    "country": "USA",
+    "metadata": "Akool is an AI-powered platform for creating personalized marketing content.",
+    "alt_text": "Akool",
+    "additional_info": {
+      "developed_by": "Akool",
+      "produced_by": "Akool",
+      "released_by": "Akool",
+      "category": "Marketing AI Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 38,
+    "image": "https://www.veed.io/favicon.ico",
+    "name": "VEED.io",
+    "description": "An online video editing tool with AI features like auto-subtitles, voiceovers, and background removal.",
+    "category": "AI Video Tools",
+    "volume": "700M",
+    "url": "https://www.veed.io",
+    "rating": 4.5,
+    "review": "A versatile tool for video editing, though the free version has limitations.",
+    "features": "Auto-subtitles, voiceovers, and background removal.",
+    "country": "UK",
+    "metadata": "VEED.io is an online video editing tool with AI-powered features.",
+    "alt_text": "VEED.io",
+    "additional_info": {
+      "developed_by": "VEED.io",
+      "produced_by": "VEED.io",
+      "released_by": "VEED.io",
+      "category": "Video Editing Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 39,
+    "image": "https://www.boomy.com/favicon.ico",
+    "name": "Boomy",
+    "description": "An AI music generator that allows users to create and share original music tracks in minutes.",
+    "category": "AI Music Tools",
+    "volume": "650M",
+    "url": "https://www.boomy.com",
+    "rating": 4.3,
+    "review": "A fun tool for creating music, though the output can be repetitive.",
+    "features": "Music generation, sharing, and customization.",
+    "country": "USA",
+    "metadata": "Boomy is an AI-powered platform for creating and sharing original music.",
+    "alt_text": "Boomy",
+    "additional_info": {
+      "developed_by": "Boomy",
+      "produced_by": "Boomy",
+      "released_by": "Boomy",
+      "category": "Music Generation Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
+  },
+  {
+    "id": 40,
+    "image": "https://www.soundraw.io/favicon.ico",
+    "name": "Soundraw",
+    "description": "An AI music generator that creates royalty-free music for videos, games, and other projects.",
+    "category": "AI Music Tools",
+    "volume": "600M",
+    "url": "https://www.soundraw.io",
+    "rating": 4.4,
+    "review": "A great tool for royalty-free music, though the library is limited.",
+    "features": "Royalty-free music generation, customization, and download.",
+    "country": "Japan",
+    "metadata": "Soundraw is an AI-powered platform for creating royalty-free music.",
+    "alt_text": "Soundraw",
+    "additional_info": {
+      "developed_by": "Soundraw",
+      "produced_by": "Soundraw",
+      "released_by": "Soundraw",
+      "category": "Music Generation Tool",
+      "supported_languages": [
+        "English"
+      ]
+    }
   }
+  
+  
+
+
+
+
+  
 ]
