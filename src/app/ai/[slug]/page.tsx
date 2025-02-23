@@ -1,104 +1,111 @@
-'use client';
+"use client";
 
-import { useEffect, useState } from 'react';
-import { usePathname } from 'next/navigation';
-import Header from '../../components/Header';
+import { useState, useEffect } from "react";
+import { useParams } from "next/navigation";
+import Image from "next/image"; // Import Next.js Image
+import Header from "../../components/Header";
 
-interface AI {
+interface AppData {
   id: number;
   name: string;
-  category: string;
+  image: string;
   description: string;
-  file_type: string;
-  file_size: number;
-  upload_date: string;
-  developer_name: string;
-  version: string;
-  platform: string;
+  url: string;
   rating: number;
-  download_count: number;
-  is_active: boolean;
-  image_url: string;
-  ai_url: string;
+  reviews: number;
+  category: string;
+  features: string;
+  additional_info: Record<string, string> | string | null;
 }
 
+const slugify = (text: string) => {
+  return text
+    .toLowerCase()
+    .replace(/[^a-z0-9]+/g, "-")
+    .replace(/^-+|-+$/g, "");
+};
+
 export default function AIDetail() {
-  const [aiData, setAiData] = useState<AI | null>(null);
-  const pathname = usePathname();
-  const slug = pathname?.split('/').pop();
+  const params = useParams<Record<string, string>>();
+  const slug = params?.slug;
+
+  const [app, setApp] = useState<AppData | null>(null);
 
   useEffect(() => {
-    if (slug) {
-      const fetchAIData = async () => {
-        const res = await fetch('/api/getData');
-        const result: AI[] = await res.json();
-        const aiTool = result.find((tool) => tool.name.toLowerCase().replace(/\s+/g, '-') === slug);
-        setAiData(aiTool || null);
-      };
-      fetchAIData();
+    if (slug && typeof slug === "string") {
+      fetch("/data/apps.json")
+        .then((res) => res.json())
+        .then((data: AppData[]) => {
+          const selectedApp = data.find((app) => slugify(app.name) === slug);
+          setApp(selectedApp || null);
+        })
+        .catch((error) => console.error("Error fetching app data:", error));
     }
   }, [slug]);
 
-  if (!aiData) return <div className="text-white text-center p-6">Loading...</div>;
+  if (!slug) return <p className="text-white text-center mt-10">Loading...</p>;
+  if (!app) return <p className="text-white text-center mt-10">App not found</p>;
 
   return (
     <>
       <Header />
-      <div className="bg-black text-white w-full h-screen flex justify-center items-center p-6">
-        <div className="w-full max-w-5xl bg-gray-900 p-8 rounded-lg shadow-xl">
-          {/* Image & Name */}
-          <div className="flex items-center gap-6">
-            <img
-              src={aiData.image_url || '/fallback.jpg'}
-              alt={aiData.name}
-              className="w-[120px] h-[120px] object-cover rounded-lg shadow-md"
-            />
-            <div>
-              <h1 className="text-3xl font-bold">{aiData.name}</h1>
-              <p className="text-blue-400 text-lg">{aiData.developer_name}</p>
+      <div className="mt-10 min-h-screen bg-black text-white flex flex-col justify-start items-center p-10 w-full">
+        <div className="flex items-center bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-lg">
+          <Image
+            src={app.image}
+            alt={app.name}
+            width={70}
+            height={70}
+            className="rounded-md transition-transform duration-300 object-cover"
+            unoptimized
+          />
+          <div className="ml-4 flex-1">
+            <h1 className="text-xl font-bold">{app.name}</h1>
+            <p className="text-gray-400 text-sm">{app.category}</p>
+            <div className="flex items-center space-x-2 mt-1">
+              <span className="text-yellow-400 text-lg font-semibold">⭐ {app.rating}</span>
+              <span className="text-gray-500">({app.reviews} reviews)</span>
             </div>
           </div>
-
-          {/* Rating & Category */}
-          <div className="mt-4 flex items-center gap-6 text-gray-400 text-sm">
-            <p className="flex items-center gap-1">
-              ⭐ <span className="text-lg">{aiData.rating}</span> ({aiData.download_count} downloads)
-            </p>
-            <p className="bg-gray-700 px-3 py-1 rounded-lg text-white text-sm">{aiData.category}</p>
-          </div>
-
-          {/* Description */}
-          <p className="text-gray-300 mt-6 text-lg leading-relaxed">{aiData.description}</p>
-
-          {/* Buttons */}
-          <div className="mt-6 flex gap-6">
-            <a
-              href={aiData.ai_url}
-              className="bg-blue-600 px-6 py-3 rounded-lg text-white text-lg font-semibold hover:bg-blue-500 transition"
+          <div className="ml-auto flex flex-col space-y-2">
+            <button
+              onClick={() => (window.location.href = app.url)}
+              className="px-6 py-2 bg-blue-500 text-white font-semibold rounded-lg shadow-md hover:bg-blue-600 transition"
             >
-              Try it
-            </a>
-            <button className="bg-gray-700 px-6 py-3 rounded-lg text-white text-lg font-semibold hover:bg-gray-600 transition">
+              Try
+            </button>
+            <button className="px-6 py-2 bg-gray-800 text-white font-semibold rounded-lg shadow-md hover:bg-gray-700 transition">
               View in Store
             </button>
           </div>
+        </div>
 
-          {/* Additional Information */}
-          <div className="mt-10 p-6 bg-gray-800 rounded-lg">
-            <h2 className="text-2xl font-semibold mb-4">Additional Information</h2>
-            <div className="grid grid-cols-2 gap-4 text-gray-400 text-lg">
-              <p><strong>Developed by:</strong> {aiData.developer_name}</p>
-              <p><strong>Category:</strong> {aiData.category}</p>
-              <p><strong>File Size:</strong> {aiData.file_size} MB</p>
-              <p><strong>Version:</strong> {aiData.version}</p>
-              <p><strong>Platform:</strong> {aiData.platform}</p>
-              <p><strong>Release Date:</strong> {aiData.upload_date}</p>
-              <p><strong>Installation:</strong> Can install on multiple devices</p>
-              <p><strong>Publisher Info:</strong> <a href="#" className="text-blue-400">Support</a></p>
-              <p><strong>Seizure Warning:</strong> <a href="#" className="text-red-400">Photosensitive warning</a></p>
-              <p><strong>Report:</strong> <a href="#" className="text-blue-400">Report this product</a></p>
-            </div>
-          </div>
+        {/* Description */}
+        <div className="mt-6 bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-lg">
+          <h2 className="text-lg font-semibold mb-2">Description</h2>
+          <p className="text-gray-400">{app.description}</p>
+        </div>
+
+        {/* Features */}
+        <div className="mt-6 bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-lg">
+          <h2 className="text-lg font-semibold mb-2">Features</h2>
+          <p className="text-gray-400">{app.features}</p>
+        </div>
+
+        {/* Additional Information */}
+        <div className="mt-6 bg-gray-900 p-6 rounded-2xl shadow-lg w-full max-w-lg">
+          <h2 className="text-lg font-semibold mb-2">Additional Information</h2>
+          {app.additional_info && typeof app.additional_info === "object" ? (
+            <ul className="text-gray-400 list-disc list-inside">
+              {Object.entries(app.additional_info).map(([key, value]) => (
+                <li key={key}>
+                  <span className="font-semibold capitalize">{key.replace(/_/g, " ")}:</span> {value}
+                </li>
+              ))}
+            </ul>
+          ) : (
+            <p className="text-gray-400">{app.additional_info || "No additional information available."}</p>
+          )}
         </div>
       </div>
     </>
