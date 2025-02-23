@@ -40,7 +40,10 @@ const Header: React.FC = () => {
     <header id="nav-menu" aria-label="navigation bar">
       <div className="container">
         <div className="nav-start">
-          <img src="https://learnloner.com/logo.svg" alt="Learn Loner Logo" className="logo-img" />
+          <div className="logo-img">
+            <span style={{ color: "indigo", fontWeight: "bold", fontSize: "1.9rem" }}>Store</span>
+            <span style={{ color: "orange", fontWeight: "bold", fontSize: "1.9rem" }}>.ai</span>
+          </div>
 
           <nav className={`menu ${isNavOpen ? "show" : ""}`} ref={navRef}>
             <ul className="menu-bar">
