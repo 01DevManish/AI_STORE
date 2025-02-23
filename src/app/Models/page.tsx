@@ -1,5 +1,6 @@
 "use client";
 import { useEffect, useState } from "react";
+import Header from "../components/Header";
 
 interface AIModel {
   id: number;
@@ -50,6 +51,8 @@ export default function ModelsPage() {
   }, []);
 
   return (
+    <>
+      <Header/>
     <div className="bg-gray-900 text-white min-h-screen p-6">
       <h1 className="text-3xl font-bold mb-6">AI Models</h1>
 
@@ -91,5 +94,6 @@ export default function ModelsPage() {
         </table>
       </div>
     </div>
+      </>
   );
 }
