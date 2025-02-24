@@ -43,7 +43,7 @@ export default function MyApp() {
 
   return (
     <>
-      <Header />
+      
       <div className="bg-black text-white min-h-screen p-6">
         <h1 className="text-3xl font-bold mb-6">AI Tools Store</h1>
         <div className="grid gap-6 max-w-7xl mx-auto grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4">
