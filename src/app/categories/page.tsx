@@ -2,7 +2,7 @@
 import { useEffect, useState } from 'react';
 import { useRouter } from 'next/navigation';
 import Image from 'next/image';
-import Header from '../components/Header';
+
 
 interface AI {
   id: number;
@@ -51,7 +51,7 @@ export default function MyApp() {
 
   return (
     <>
-      <Header />
+      
       <div className="flex bg-black text-white min-h-screen flex-col md:flex-row">
         {/* Sidebar - Hidden on Mobile */}
         <aside className="w-full md:w-64 bg-gray-900 p-4 h-screen overflow-y-auto sticky top-0 md:block hidden">
