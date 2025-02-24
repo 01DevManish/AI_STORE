@@ -1,0 +1,296 @@
+/* Navbar container */
+.navbar {
+  background-color: #1a1a1a;
+  color: #ffffff;
+  position: fixed;
+  top: 0;
+  width: 100%;
+  z-index: 1000;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.3);
+}
+
+/* Inner container */
+.navbar-container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 64px;
+}
+
+/* Logo styling */
+.navbar-logo a {
+  font-size: 1.5rem;
+  font-weight: bold;
+  text-decoration: none;
+  color: #ffffff;
+  letter-spacing: -0.5px;
+}
+
+/* Desktop menu (aligned right) */
+.navbar-menu {
+  display: flex;
+  gap: 2rem;
+}
+
+/* Desktop menu items */
+.navbar-item {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1rem;
+  padding: 0.5rem 1rem;
+  border-radius: 20px; /* Oval shape */
+  transition: background-color 0.3s ease, color 0.3s ease, transform 0.3s ease;
+}
+
+.navbar-item:hover {
+  background-color: #333333;
+  color: #e0e0e0;
+  transform: scale(1.05); /* Slight oval stretch */
+}
+
+/* Navbar link */
+.navbar-link {
+  display: flex;
+  align-items: center;
+  gap: 0.25rem;
+  color: inherit;
+  text-decoration: none;
+}
+
+/* Profile button (special styling) */
+.navbar-item.profile-button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background-color: #333333;
+  border-radius: 50%;
+  padding: 0;
+}
+
+.navbar-item.profile-button:hover {
+  background-color: #4d4d4d;
+  transform: scale(1.1); /* Slightly larger for circular profile */
+}
+
+.navbar-item.profile-button svg {
+  width: 20px;
+  height: 20px;
+}
+
+.navbar-item.profile-button .profile-picture {
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  object-fit: cover;
+}
+
+/* Upload button (special styling) */
+.navbar-item.upload-button {
+  background-color: #4d4d4d;
+  padding: 0.5rem 1rem;
+  border-radius: 20px;
+}
+
+.navbar-item.upload-button:hover {
+  background-color: #666666;
+}
+
+/* Login button */
+.navbar-item.login-button {
+  background-color: #333333;
+  padding: 0.5rem 1rem;
+  border-radius: 15px;
+}
+
+.navbar-item.login-button:hover {
+  background-color: #4d4d4d;
+}
+
+/* Dropdown menu for desktop */
+.has-dropdown {
+  position: relative;
+}
+
+.has-dropdown .dropdown-menu {
+  position: absolute;
+  top: 100%;
+  left: 0;
+  background-color: #252525;
+  border-radius: 4px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+  list-style: none;
+  padding: 0.5rem 0;
+  min-width: 150px;
+  opacity: 0;
+  transform: translateY(-10px);
+  visibility: hidden;
+  transition: opacity 0.2s ease, transform 0.2s ease;
+  border-radius: 20px;
+}
+
+.has-dropdown:hover .dropdown-menu {
+  opacity: 1;
+  transform: translateY(0);
+  visibility: visible;
+}
+
+.dropdown-item a {
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  display: block;
+  transition: color 0.3s ease;
+}
+
+.dropdown-item a:hover {
+  color: #e0e0e0;
+}
+
+/* Dropdown arrow for desktop */
+.dropdown-arrow {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.has-dropdown:hover .dropdown-arrow {
+  transform: rotate(180deg);
+}
+
+/* Mobile toggle button */
+.navbar-toggle {
+  display: none;
+}
+
+.navbar-toggle button {
+  background: none;
+  border: none;
+  color: #ffffff;
+  cursor: pointer;
+}
+
+.navbar-toggle svg {
+  width: 24px;
+  height: 24px;
+}
+
+/* Mobile menu */
+.navbar-mobile-menu {
+  display: none;
+  background-color: #252525;
+  padding: 1rem;
+  position: absolute;
+  top: 64px;
+  left: 0;
+  width: 100%;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+}
+
+/* Mobile menu items */
+.navbar-mobile-item {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  color: #ffffff;
+  text-decoration: none;
+  font-size: 1.1rem;
+  padding: 0.75rem 1rem;
+  transition: background-color 0.3s ease;
+  background: none;
+  border: none;
+  border-radius: 20px;
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+}
+
+.navbar-mobile-item:hover {
+  background-color: #404040;
+}
+
+/* Mobile dropdown */
+.mobile-dropdown {
+  list-style: none;
+  padding-left: 1rem;
+}
+
+.mobile-dropdown .navbar-mobile-item {
+  padding-left: 1rem;
+  font-size: 0.9rem;
+}
+
+/* Dropdown arrow for mobile */
+.dropdown-arrow-mobile {
+  width: 16px;
+  height: 16px;
+  transition: transform 0.2s ease;
+}
+
+.dropdown-arrow-mobile.open {
+  transform: rotate(180deg);
+}
+
+/* Upload in mobile menu */
+.navbar-mobile-item.upload-mobile {
+  background-color: #4d4d4d;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem 0;
+}
+
+.navbar-mobile-item.upload-mobile:hover {
+  background-color: #666666;
+}
+
+/* Login in mobile menu */
+.navbar-mobile-item.login-mobile {
+  background-color: #333333;
+  padding: 0.75rem 1rem;
+  border-radius: 20px;
+  margin: 0.5rem 0;
+}
+
+.navbar-mobile-item.login-mobile:hover {
+  background-color: #4d4d4d;
+}
+
+/* Profile in mobile menu */
+.navbar-mobile-item.profile-mobile {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.navbar-mobile-item.profile-mobile .profile-picture-mobile {
+  width: 24px;
+  height: 24px;
+  border-radius: 15px;
+  object-fit: cover;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .navbar-menu {
+    display: none;
+  }
+
+  .navbar-toggle {
+    display: block;
+  }
+
+  .navbar-mobile-menu {
+    display: block;
+  }
+}
+
+@media (min-width: 769px) {
+  .navbar-mobile-menu {
+    display: none !important;
+  }
+}
