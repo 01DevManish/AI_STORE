@@ -30,7 +30,7 @@ const Navbar: React.FC = () => {
       ],
     },
     { name: "Categories", href: "/categories" },
-    { name: "AI Models", href: "/ai-models" },
+    { name: "AI Models", href: "/Models" },
     { name: "About", href: "/about" },
     ...(isAuthenticated === null
       ? [] // Render nothing until auth status is known
