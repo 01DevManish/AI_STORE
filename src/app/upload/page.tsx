@@ -188,12 +188,12 @@ const CMSForm: React.FC = () => {
         </div>
 
         <div className="form-group file-group">
-          <label htmlFor="image">Profile Picture</label>
+          <label htmlFor="image">Logo</label>
           <div className="file-input-wrapper">
             {formData.croppedImage ? (
               <img
                 src={URL.createObjectURL(formData.croppedImage)}
-                alt="Cropped Preview"
+                alt="ai-logo"
                 className="image-preview"
               />
             ) : imagePreview && (
