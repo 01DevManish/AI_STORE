@@ -53,7 +53,9 @@ const AuthPage = () => {
           setIsLogin(true);
         }
       }
-    } 
+    } catch (err) {
+      setError('Something went wrong');
+    }
   };
 
   return (
