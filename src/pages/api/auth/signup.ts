@@ -1,44 +1,37 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
 import db from '../../../lib/db';
-import { RowDataPacket } from 'mysql2'; // Import RowDataPacket for correct typing
+import { RowDataPacket } from 'mysql2/promise'; // Use promise-based MySQL
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
-  if (req.method === 'POST') {
-    const { username, email, password } = req.body;
+  if (req.method !== 'POST') {
+    return res.status(405).json({ error: 'Method not allowed' });
+  }
 
-    try {
-      // Check if the user already exists
-      db.query('SELECT * FROM users WHERE email = ?', [email], async (err, result: RowDataPacket[]) => {
-        if (err) {
-          console.error("Database query error:", err);
-          return res.status(500).json({ error: 'Database error during user lookup' });
-        }
+  const { username, email, password } = req.body;
 
-        if (result.length > 0) {
-          // User exists
-          return res.status(400).json({ error: 'User already exists' });
-        }
+  try {
+    // Check if the user already exists
+    const [rows] = await db.query<RowDataPacket[]>('SELECT * FROM users WHERE email = ?', [email]);
 
-        // Hash the password
-        const hashedPassword = await bcrypt.hash(password, 12);
-
-        // Insert new user into the database
-        db.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [username, email, hashedPassword], (err, result) => {
-          if (err) {
-            console.error("Database insert error:", err);
-            return res.status(500).json({ error: 'Error creating user in database' });
-          }
-
-          // Successful signup
-          return res.status(201).json({ message: 'User created successfully' });
-        });
-      });
-    } catch (err) {
-      console.error("Error during signup:", err);
-      return res.status(500).json({ error: 'Unexpected error occurred' });
+    if (rows.length > 0) {
+      return res.status(400).json({ error: 'User already exists' });
     }
-  } else {
-    res.status(405).json({ error: 'Method not allowed' });
+
+    // Hash the password
+    const hashedPassword = await bcrypt.hash(password, 12);
+
+    // Insert new user into the database
+    await db.query('INSERT INTO users (username, email, password) VALUES (?, ?, ?)', [
+      username,
+      email,
+      hashedPassword,
+    ]);
+
+    return res.status(201).json({ message: 'User created successfully' });
+  } catch (err) {
+    console.error('Error during signup:', err);
+    return res.status(500).json({ error: 'Unexpected error occurred' });
   }
 }
+
