@@ -10,9 +10,13 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   const { username, email, password } = req.body;
 
+  if (!username || !email || !password) {
+    return res.status(400).json({ error: 'All fields are required' });
+  }
+
   try {
     // Check if the user already exists
-    const [rows] = await db.query<RowDataPacket[]>('SELECT * FROM users WHERE email = ?', [email]);
+    const [rows]: [RowDataPacket[]] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
 
     if (rows.length > 0) {
       return res.status(400).json({ error: 'User already exists' });
@@ -34,4 +38,3 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
     return res.status(500).json({ error: 'Unexpected error occurred' });
   }
 }
-
