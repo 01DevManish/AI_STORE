@@ -77,7 +77,7 @@ export default function AppDetail() {
             onClick={() => (window.location.href = app.url)}
             className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-6 rounded-lg font-semibold"
           >
-            Download
+            Visit AI
           </button>
           <button className="bg-gray-700 hover:bg-gray-600 text-white py-2 px-6 rounded-lg font-semibold flex items-center gap-2">
             <img src="/store-icon.png" alt="Store Icon" className="w-5 h-5" />
