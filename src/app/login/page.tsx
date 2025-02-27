@@ -54,8 +54,7 @@ const AuthPage = () => {
         }
       }
     } catch (err) {
-      console.error("Error during authentication:", err); // Log the actual error
-      setError("Something went wrong"); // Display a generic error message
+      setError('Something went wrong');
     }
   };
 
