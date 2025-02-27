@@ -54,8 +54,9 @@ const AuthPage = () => {
         }
       }
     } catch (err) {
-      setError('Something went wrong');
-    }
+  console.error('Login/Signup Error:', err); // Now err is used
+  setError('Something went wrong');
+}
   };
 
   return (
