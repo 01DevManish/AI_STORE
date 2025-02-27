@@ -1,6 +1,6 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
-import jwt, { JwtPayload } from 'jsonwebtoken';
+import jwt from 'jsonwebtoken';
 import db from '../../../lib/db';
 
 // Define the correct type for the query result
