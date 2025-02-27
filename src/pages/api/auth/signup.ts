@@ -16,9 +16,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     // Check if the user already exists
-    const [rows] = await db.query<RowDataPacket[]>('SELECT * FROM users WHERE email = ?', [email]);
+    const [rows]: [RowDataPacket[], any] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
 
-    if ((rows as RowDataPacket[]).length > 0) {
+    if (rows.length > 0) {
       return res.status(400).json({ error: 'User already exists' });
     }
 
