@@ -1,7 +1,7 @@
 import { NextApiRequest, NextApiResponse } from 'next';
 import bcrypt from 'bcryptjs';
 import db from '../../../lib/db';
-import { RowDataPacket } from 'mysql2/promise'; // Use promise-based MySQL
+import { RowDataPacket } from 'mysql2';
 
 export default async function handler(req: NextApiRequest, res: NextApiResponse) {
   if (req.method !== 'POST') {
@@ -16,9 +16,9 @@ export default async function handler(req: NextApiRequest, res: NextApiResponse)
 
   try {
     // Check if the user already exists
-    const [rows]: [RowDataPacket[]] = await db.query('SELECT * FROM users WHERE email = ?', [email]);
+    const [rows] = await db.query<RowDataPacket[]>('SELECT * FROM users WHERE email = ?', [email]);
 
-    if (rows.length > 0) {
+    if ((rows as RowDataPacket[]).length > 0) {
       return res.status(400).json({ error: 'User already exists' });
     }
 
